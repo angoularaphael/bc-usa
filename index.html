@@ -3,17 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Boxing Center - Club de boxe, MMA et fitness premium. Entraînez-vous avec des professionnels dans une ambiance unique.">
-    <title>Boxing Center Toulouse États-Unis - Club de Boxe, MMA & Fitness Premium</title>
+    <meta name="description" content="1 200 m² dédiés à la boxe, au MMA et à la préparation physique, avenue des États-Unis à Toulouse. 2 rings, une cage MMA, des coachs diplômés. Essai gratuit.">
+    <title>Salle de Boxe & MMA à Toulouse | Boxing Center États-Unis</title>
+    <meta name="theme-color" content="#030814">
+
+    <!-- Partage sur les réseaux sociaux -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
+    <meta property="og:title" content="Salle de Boxe & MMA à Toulouse | Boxing Center États-Unis">
+    <meta property="og:description" content="1 200 m², 2 rings, une cage MMA et 3 espaces spécialisés avenue des États-Unis à Toulouse. Première séance d'essai gratuite.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!--
+      À COMPLÉTER À LA MISE EN LIGNE — nécessite le domaine de production.
+      Volontairement laissé vide : une URL canonique erronée peut faire
+      désindexer la page. Remplacer https://exemple.fr par le vrai domaine,
+      puis décommenter (à reporter sur les 5 pages).
+
+      <link rel="canonical" href="https://exemple.fr/">
+      <meta property="og:url" content="https://exemple.fr/">
+      <meta property="og:image" content="https://exemple.fr/photo_salle/salle_cage_ring.jpg">
+    -->
+
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+
+    <!-- Données structurées : fiche établissement pour le référencement local.
+         Ne contient que des informations vérifiables présentes sur le site.
+         Volontairement absents : openingHours et aggregateRating (voir rapport). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Boxing Center Toulouse États-Unis",
+      "description": "Club de boxe anglaise, boxe pieds-poings, MMA, grappling et préparation physique. 1 200 m² répartis en 3 espaces spécialisés de 400 m².",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "388 avenue des États-Unis",
+        "postalCode": "31200",
+        "addressLocality": "Toulouse",
+        "addressRegion": "Occitanie",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.622285,
+        "longitude": 1.423984
+      },
+      "telephone": "+33562244682",
+      "email": "boxingcenter31@gmail.com",
+      "sameAs": ["https://www.facebook.com/BoxingCenterToulouse/"],
+      "areaServed": {
+        "@type": "City",
+        "name": "Toulouse"
+      },
+      "sport": ["Boxe anglaise", "Kickboxing", "Muay Thaï", "MMA", "Grappling", "Cross Training"],
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "2 rings de compétition", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Cage MMA surélevée", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Espace musculation", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Parking réservé aux membres", "value": true }
+      ]
+    }
+    </script>
 </head>
 <body>
 
+    <a href="#contenu" class="skip-link">Aller au contenu</a>
+
     <!-- Promo Banner -->
-    <div class="promo-banner" style="background-color: var(--bronze); color: var(--navy-dark); text-align: center; padding: 0.5rem; font-weight: 700; font-size: 0.95rem; z-index: 1000; position: relative;">
-        🔥 Offre Spéciale : Frais d'inscription offerts pour toute souscription avant la fin du mois ! <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" style="color: var(--navy-dark); text-decoration: underline; margin-left: 10px;">Profitez-en maintenant</a>
+    <div class="promo-banner" style="background-color: var(--bronze); color: var(--navy-dark); text-align: center; padding: 0.6rem 1rem; font-weight: 700; font-size: 0.95rem; z-index: 1000; position: relative;">
+        Frais d'inscription offerts sur tout abonnement souscrit ce mois-ci. <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" style="color: var(--navy-dark); text-decoration: underline; margin-left: 8px;">Voir les abonnements</a>
     </div>
 
     <!-- Header / Navigation -->
@@ -45,18 +107,31 @@
         </div>
     </header>
 
+    <main id="contenu">
+
     <!-- Hero Section -->
-    <section class="hero" style="background-image: url('photo_salle/mma_cage.jpg'); background-size: cover; background-position: center;">
+    <section class="hero" style="background-image: url('photo_salle/hero-cage-mma.jpg'); background-size: cover; background-position: center;">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <img src="logo/logo_transparent_v2.png" alt="Boxing Center Logo" class="hero-logo-img">
+            <!-- Le logo du hero a été retiré : le titre porte désormais le nom du
+                 club en grand, et le logo figure déjà dans l'en-tête. Les trois
+                 répétitions de « Boxing Center » dans le premier écran alourdissaient
+                 la composition. Pour le rétablir :
+                 <img src="logo/logo_transparent_v2.png" alt="" class="hero-logo-img"> -->
 
+            <p class="hero-tagline">Salle de boxe, MMA &amp; préparation physique &middot; Toulouse</p>
             <h1 class="hero-title">Boxing Center <span>États-Unis</span></h1>
-            <p class="hero-desc">Découvrez notre espace XXL de 1 200 m² d'entraînement répartis en 3 zones spécialisées de 400 m² : Boxe Anglaise & Pieds-Poings, Striking & Grappling, et Préparation Physique & Fitness.</p>
+            <p class="hero-desc">1 200 m², deux rings de compétition, une cage MMA et des coachs diplômés. Que vous n'ayez jamais mis de gants ou que vous prépariez un combat, vous avez votre place ici.</p>
             <div class="hero-btns">
-                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Séance d'essai</a>
-                <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" class="btn btn-secondary">Offres & Tarifs</a>
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Réserver ma séance d'essai gratuite</a>
+                <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" class="btn btn-secondary">Voir les tarifs</a>
             </div>
+            <!-- Réassurance : lève les 3 objections classiques avant le premier clic. -->
+            <ul class="hero-reassurance">
+                <li>Séance d'essai gratuite et sans engagement</li>
+                <li>Gants et protections prêtés</li>
+                <li>Parking réservé aux membres</li>
+            </ul>
         </div>
     </section>
 
@@ -97,7 +172,7 @@
             <div class="sticky-media-col">
                 <div class="media-frame double-outline-element">
                     <img src="photo_salle/DSC01026 (1).jpg" alt="Boxe Anglaise" class="sticky-img active" id="img-boxe">
-                    <img src="photo_salle/mma_cage.jpg" alt="MMA" class="sticky-img" id="img-mma">
+                    <img src="photo_salle/salle_cage_ring.jpg" alt="Espace MMA : cage surélevée et ring" class="sticky-img" id="img-mma">
                     <img src="photo_salle/taii.jpg" alt="Muay Thai" class="sticky-img" id="img-thai">
                     <img src="photo_salle/ChatGPT Image 20 juin 2026, 13_18_30.jpg" alt="Cardio Boxing et Sacs de frappe" class="sticky-img" id="img-cardio">
                 </div>
@@ -171,28 +246,28 @@
                         <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
                         <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Une salle incroyable, immense et super bien équipée. Les coachs sont super pédagogues et l'ambiance est hyper motivante."</p>
                     </div>
-                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Célia M. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Boxe Anglaise</span></h4>
+                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Célia M. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Boxe Anglaise</span></h3>
                 </div>
                 <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
                         <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"La cage de MMA est au top et l'espace de lutte/grappling de 400m² est unique à Toulouse. Le meilleur club de la région sans hésiter."</p>
                     </div>
-                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Guillaume P. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Compétiteur MMA</span></h4>
+                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Guillaume P. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Compétiteur MMA</span></h3>
                 </div>
                 <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
                         <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Super cours collectifs de Boxing Lady et de préparation physique. Les vestiaires et les équipements de musculation sont très propres."</p>
                     </div>
-                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Manon L. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Fitness & Lady</span></h4>
+                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Manon L. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Fitness & Lady</span></h3>
                 </div>
                 <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
                         <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Grand espace musculation et de cross-training en accès libre. Idéal pour s'entraîner seul ou en groupe. Coachs à l'écoute."</p>
                     </div>
-                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Johnson T. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Préparation Physique</span></h4>
+                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Johnson T. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Préparation Physique</span></h3>
                 </div>
             </div>
         </div>
@@ -207,7 +282,7 @@
                 <div class="faq-item">
                     <button class="faq-question">Comment se déroule la première séance d'essai ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Il vous suffit de réserver votre séance en ligne via notre formulaire ou par téléphone. Présentez-vous 15 minutes avant le début du cours avec une tenue de sport adaptée (t-shirt et short/legging), une bouteille d'eau et une serviette. Nous vous prêtons les gants et les protections pour votre premier essai !</p>
+                        <p>Il vous suffit de réserver votre séance en ligne sur notre boutique ou par téléphone. Présentez-vous 15 minutes avant le début du cours avec une tenue de sport adaptée (t-shirt et short/legging), une bouteille d'eau et une serviette. Nous vous prêtons les gants et les protections pour votre premier essai !</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -219,7 +294,7 @@
                 <div class="faq-item">
                     <button class="faq-question">Quelles sont vos formules d'abonnements ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Nous proposons plusieurs formules d'abonnements adaptées à vos besoins : des abonnements annuels avec engagement pour bénéficier du meilleur tarif mensuel, ainsi que des formules sans engagement pour un maximum de flexibilité. Des tarifs étudiants et des offres promotionnelles de rentrée sont également disponibles. Consultez notre page Tarifs pour plus de détails.</p>
+                        <p>Nous proposons plusieurs formules adaptées à vos besoins : des abonnements annuels avec engagement pour bénéficier du meilleur tarif mensuel, ainsi que des formules sans engagement pour un maximum de flexibilité. Des tarifs étudiants et des offres de rentrée sont également disponibles. <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" style="color: var(--bronze); font-weight: 600;">Consulter les tarifs et abonnements</a>.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -237,9 +312,16 @@
         <div class="container">
             <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Prêt à monter sur le ring ?</h2>
             <p style="max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem; color: var(--text-secondary);">Faites le premier pas aujourd'hui. Votre première séance d'entraînement est entièrement gratuite et sans engagement.</p>
-            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element" style="font-size: 1.2rem; padding: 1rem 3rem;">Réserver mon cours d'essai</a>
+            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary double-outline-element" style="font-size: 1.2rem; padding: 1rem 3rem;">Réserver ma séance d'essai gratuite</a>
+            <p style="margin-top: 1.25rem; font-size: 0.95rem; color: var(--text-muted);">
+                Une question avant de venir ? Appelez-nous au
+                <a href="tel:+33562244682" style="color: var(--bronze); font-weight: 600;">05 62 24 46 82</a>
+                ou <a href="contact.html" style="color: var(--bronze); font-weight: 600;">écrivez-nous</a>.
+            </p>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -270,7 +352,7 @@
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
                 </ul>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook">
+                    <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
                     <a href="#" class="social-link" aria-label="Instagram">
@@ -287,6 +369,56 @@
             <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <!-- Barre d'action fixe : visible uniquement en dessous de 992px, là où
+         .nav-cta est masqué et où aucun CTA n'était accessible sans ouvrir le menu. -->
+    <div class="mobile-cta-bar">
+        <a href="tel:+33562244682" class="btn btn-secondary">Appeler</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary">Séance d'essai</a>
+    </div>
+
+    <!-- Données structurées FAQ : reprend mot pour mot les questions/réponses
+         affichées ci-dessus, condition requise par Google. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment se déroule la première séance d'essai ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il vous suffit de réserver votre séance en ligne sur notre boutique ou par téléphone. Présentez-vous 15 minutes avant le début du cours avec une tenue de sport adaptée (t-shirt et short/legging), une bouteille d'eau et une serviette. Nous vous prêtons les gants et les protections pour votre premier essai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel équipement dois-je apporter pour les cours ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour la boxe anglaise et pieds-poings, une paire de gants de boxe, des bandes de protection et un protège-dents sont indispensables. Pour le MMA et le Grappling, un rashguard et un short de combat sont recommandés. Vous pouvez acheter tout votre équipement directement dans notre boutique officielle au club."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont vos formules d'abonnements ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous proposons plusieurs formules adaptées à vos besoins : des abonnements annuels avec engagement pour bénéficier du meilleur tarif mensuel, ainsi que des formules sans engagement pour un maximum de flexibilité. Des tarifs étudiants et des offres de rentrée sont également disponibles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La salle de Toulouse États-Unis est-elle facile d'accès ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, notre salle est idéalement située au 388 avenue des États-Unis à Toulouse, à proximité immédiate de la sortie de périphérique 33b Lalande. Nous disposons d'un grand parking réservé aux membres pour vous garer facilement."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>

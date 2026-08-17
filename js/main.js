@@ -19,13 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(e) {
             const targetUrl = this.getAttribute('href');
-            
+
             // Ignore links that shouldn't trigger the loader
-            if (!targetUrl || 
-                targetUrl.startsWith('#') || 
-                targetUrl.startsWith('tel:') || 
+            if (!targetUrl ||
+                targetUrl.startsWith('#') ||
+                targetUrl.startsWith('tel:') ||
                 targetUrl.startsWith('mailto:') ||
-                e.ctrlKey || e.metaKey) {
+                e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) {
+                return;
+            }
+
+            // Le loader ne doit s'appliquer qu'à la navigation interne.
+            // Sans ces deux gardes, preventDefault() + window.location.href
+            // écrasait target="_blank" : la boutique, la réservation et les
+            // réseaux sociaux s'ouvraient dans l'onglet courant, et le
+            // visiteur quittait le site au lieu d'ouvrir un second onglet.
+            if (this.target && this.target !== '_self') {
+                return;
+            }
+            if (this.host && this.host !== window.location.host) {
+                return;
+            }
+            // Lien de téléchargement : le loader le détournerait vers un
+            // window.location.href, qui afficherait le fichier au lieu de
+            // l'enregistrer.
+            if (this.hasAttribute('download')) {
                 return;
             }
 
@@ -133,39 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Contact Form handling (if on contact page)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // basic visual feedback
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Envoi en cours...';
-            
-            setTimeout(() => {
-                // Show success message
-                submitBtn.style.backgroundColor = '#28a745';
-                submitBtn.style.borderColor = '#28a745';
-                submitBtn.style.color = '#fff';
-                submitBtn.innerHTML = '✓ Message envoyé !';
-                
-                // Reset form
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.style.backgroundColor = '';
-                    submitBtn.style.borderColor = '';
-                    submitBtn.style.color = '';
-                    submitBtn.innerHTML = originalText;
-                }, 3000);
-            }, 1500);
-        });
-    }
+    // 5. (Ancien formulaire de contact — supprimé)
+    // Le gestionnaire qui vivait ici simulait un envoi : il bloquait la soumission,
+    // affichait « ✓ Message envoyé ! » puis vidait les champs, sans jamais rien
+    // transmettre. Le formulaire a été retiré de contact.html ; la prise de contact
+    // passe désormais par le téléphone, l'email et la réservation en ligne.
 
     // 6. Sticky Scroll Media Switcher
     const slides = document.querySelectorAll('.content-slide');
