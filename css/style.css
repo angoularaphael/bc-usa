@@ -3864,3 +3864,78 @@ body.page-abonnements {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Page 404
+   ========================================================================== */
+
+.page-404 {
+    min-height: 72svh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: calc(8.5rem + env(safe-area-inset-top, 0px)) 0 5rem;
+}
+
+.page-404-code {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(5.5rem, 22vw, 10rem);
+    line-height: 0.8;
+    letter-spacing: 0.04em;
+    color: var(--bronze);
+    margin: 0 0 1.1rem;
+    text-shadow: 0 0 40px rgba(197, 155, 108, 0.18);
+}
+
+.page-404 h1 {
+    font-size: clamp(1.85rem, 5vw, 3.1rem);
+    margin-bottom: 0.85rem;
+}
+
+.page-404 > .container > p {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-404-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+.page-404-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 1.25rem;
+    margin-top: 1.75rem;
+}
+
+.page-404-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+}
+
+.page-404-links a:hover,
+.page-404-links a:focus-visible {
+    color: var(--bronze);
+}
+
+@media (max-width: 992px) {
+    .page-404 {
+        min-height: 0;
+        padding: calc(7.5rem + env(safe-area-inset-top, 0px)) 0 6.5rem;
+    }
+    .page-404-actions .btn {
+        width: 100%;
+        max-width: 22rem;
+    }
+}

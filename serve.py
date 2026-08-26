@@ -32,6 +32,20 @@ class QuietHandler(SimpleHTTPRequestHandler):
         self.send_error(HTTPStatus.NOT_FOUND, "Not Found")
         return None
 
+    def send_error(self, code, message=None, explain=None):
+        if code == HTTPStatus.NOT_FOUND or code == 404:
+            page = ROOT / "404.html"
+            if page.is_file():
+                body = page.read_bytes()
+                self.send_response(HTTPStatus.NOT_FOUND)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                if self.command != "HEAD":
+                    self.wfile.write(body)
+                return
+        return super().send_error(code, message, explain)
+
     def do_GET(self):
         raw = unquote(self.path.split("?", 1)[0])
         if raw in ("/sitemap.xml", "sitemap.xml"):
