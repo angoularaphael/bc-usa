@@ -1,218 +1,235 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Page Transition Loader
-    const loaderHTML = `
-        <div id="pageTransitionLoader" class="page-loader">
-            <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="loader-logo">
-            <h2 class="loader-text" id="loaderDestText">Chargement...</h2>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('afterbegin', loaderHTML);
-    const pageLoader = document.getElementById('pageTransitionLoader');
-    const loaderText = document.getElementById('loaderDestText');
-
-    // Fade out on initial load
-    setTimeout(() => {
-        pageLoader.classList.add('hide');
-    }, 400);
-
-    // Handle link clicks for transitions
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetUrl = this.getAttribute('href');
-
-            // Ignore links that shouldn't trigger the loader
-            if (!targetUrl ||
-                targetUrl.startsWith('#') ||
-                targetUrl.startsWith('tel:') ||
-                targetUrl.startsWith('mailto:') ||
-                e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) {
-                return;
-            }
-
-            // Le loader ne doit s'appliquer qu'à la navigation interne.
-            // Sans ces deux gardes, preventDefault() + window.location.href
-            // écrasait target="_blank" : la boutique, la réservation et les
-            // réseaux sociaux s'ouvraient dans l'onglet courant, et le
-            // visiteur quittait le site au lieu d'ouvrir un second onglet.
-            if (this.target && this.target !== '_self') {
-                return;
-            }
-            if (this.host && this.host !== window.location.host) {
-                return;
-            }
-            // Lien de téléchargement : le loader le détournerait vers un
-            // window.location.href, qui afficherait le fichier au lieu de
-            // l'enregistrer.
-            if (this.hasAttribute('download')) {
-                return;
-            }
-
-            e.preventDefault();
-
-            // Determine page name for the loader
-            let destName = this.textContent.trim();
-            if (!destName || destName.length > 20 || this.querySelector('img') || this.querySelector('svg')) {
-                if(targetUrl.includes('clubs.html')) destName = "Le Club";
-                else if(targetUrl.includes('disciplines.html')) destName = "Disciplines";
-                else if(targetUrl.includes('planning.html')) destName = "Plannings";
-                else if(targetUrl.includes('contact.html')) destName = "Contact";
-                else if(targetUrl.includes('boutique.boxingcenter.fr')) destName = "Boutique & Réservations";
-                else if(targetUrl.includes('index.html') || targetUrl === '/' || targetUrl === './') destName = "Accueil";
-                else destName = "Redirection...";
-            }
-
-            loaderText.textContent = destName;
-            pageLoader.classList.remove('hide');
-
-            // Wait for transition then navigate
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 600);
-        });
-    });
-
-    // Also handle pages served from cache (Safari/bfcache)
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted && pageLoader) {
-            pageLoader.classList.add('hide');
-        }
-    });
-    // 1. Header scroll effect
     const header = document.querySelector('header');
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    // 2. Hamburger Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const handleScroll = () => {
+        if (!header) return;
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    const closeMenu = () => {
+        if (!hamburger || !navMenu) return;
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+        document.body.style.overflow = '';
+    };
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            const open = !navMenu.classList.contains('active');
+            hamburger.classList.toggle('active', open);
+            navMenu.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            hamburger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+            document.body.style.overflow = open ? 'hidden' : '';
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+        navMenu.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) closeMenu();
         });
     }
 
-    // 3. Highlight current active page in navigation
-    const currentPath = window.location.pathname;
-    const navItems = document.querySelectorAll('.nav-item');
-    
-    navItems.forEach(item => {
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-item').forEach((item) => {
         const link = item.querySelector('a');
-        if (link) {
-            const href = link.getAttribute('href');
-            // Check if current path ends with href or if it's the root path and href is index.html
-            if (currentPath.endsWith(href) || (currentPath.endsWith('/') && href === 'index.html')) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
+        if (!link) return;
+        const href = (link.getAttribute('href') || '').split('#')[0];
+        if (!href || href.startsWith('http')) return;
+        const isActive = href === currentFile;
+        item.classList.toggle('active', isActive);
+        if (isActive) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
         }
     });
 
-    // 4. Scroll Reveal Animation using IntersectionObserver and CSS classes
-    const revealElements = document.querySelectorAll('.card, .img-card, .feature-info, .feature-img-wrapper, .price-card, .schedule-table-wrapper');
-    
-    if ('IntersectionObserver' in window && revealElements.length > 0) {
-        // Add reveal class to all target elements
-        revealElements.forEach(el => el.classList.add('reveal'));
+    initReveal(reduceMotion);
+    initCounters(reduceMotion);
+    initHeroParallax(reduceMotion);
+    initFaq();
+    initBackToTop(reduceMotion);
+    if (typeof initOffers === 'function') initOffers(reduceMotion);
+});
 
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            root: null,
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
-        });
+/* Apparition au scroll.
+   Chaque élément se révèle quand il entre réellement dans le viewport : c'est ce
+   qui guide le regard section par section. Les enfants d'une même grille sont
+   décalés (stagger) pour donner un ordre de lecture au lieu d'un bloc qui
+   apparaît d'un coup.
+   NB : une ancienne version forçait l'état "active" sur TOUS les éléments après
+   2,5 s. Résultat, tout ce qui était sous la ligne de flottaison — dont les
+   offres — était déjà révélé avant même qu'on y arrive : l'animation existait
+   dans le code mais n'était jamais visible. */
+function initReveal(reduceMotion) {
+    const groups = [
+        '.plan-grid', '.home-plans', '.decide-grid', '.plan-conditions',
+        '.bento-spaces', '.disc-tiles', '.disc-chips', '.stats-home',
+        '.planning-preview', '.coach-home-grid', '.network-grid', '.proof-grid',
+        '.faq-accordion', '.grid-3', '.grid-2'
+    ].join(',');
 
-        // Trigger observer on next frame to avoid flash
-        requestAnimationFrame(() => {
-            revealElements.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll(groups).forEach((group) => {
+        Array.from(group.children).forEach((child, i) => {
+            child.style.setProperty('--reveal-i', String(Math.min(i, 5)));
         });
+    });
+
+    const revealSelector = [
+        '.reveal-item', '.card', '.img-card', '.feature-info', '.feature-img-wrapper',
+        '.price-card', '.plan-card', '.schedule-table-wrapper', '.stat-home',
+        '.space-card', '.bento-tile', '.editorial-copy', '.editorial-media',
+        '.discipline-card', '.disc-tile', '.planning-card', '.coach-home', '.faq-item',
+        '.location-block', '.location-card', '.network-card', '.decide-card', '.proof-item',
+        '.section-head', '.trial-banner', '.coach-card', '.amenity-card',
+        '.gallery-item', '.chip-list', '.discipline-row', '.immersive-body',
+        '.values-inner'
+    ].join(',');
+
+    const revealElements = document.querySelectorAll(revealSelector);
+    if (revealElements.length === 0) return;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealElements.forEach((el) => el.classList.add('is-revealed', 'active'));
+        return;
     }
 
-    // 5. (Ancien formulaire de contact — supprimé)
-    // Le gestionnaire qui vivait ici simulait un envoi : il bloquait la soumission,
-    // affichait « ✓ Message envoyé ! » puis vidait les champs, sans jamais rien
-    // transmettre. Le formulaire a été retiré de contact.html ; la prise de contact
-    // passe désormais par le téléphone, l'email et la réservation en ligne.
+    revealElements.forEach((el) => el.classList.add('reveal'));
 
-    // 6. Sticky Scroll Media Switcher
-    const slides = document.querySelectorAll('.content-slide');
-    const stickyImages = document.querySelectorAll('.sticky-img');
-    
-    if (slides.length > 0 && stickyImages.length > 0) {
-        const slideObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const targetId = entry.target.getAttribute('data-target');
-                    
-                    // Deactivate all images
-                    stickyImages.forEach(img => img.classList.remove('active'));
-                    
-                    // Activate target image
-                    const activeImg = document.getElementById(targetId);
-                    if (activeImg) {
-                        activeImg.classList.add('active');
-                    }
-                    
-                    // Visual active feedback on slide text (dim inactive slides on desktop)
-                    if (window.innerWidth > 992) {
-                        slides.forEach(s => s.style.opacity = '0.25');
-                        entry.target.style.opacity = '1';
-                    } else {
-                        slides.forEach(s => s.style.opacity = '1');
-                    }
-                }
-            });
-        }, {
-            root: null,
-            threshold: 0.5,
-            rootMargin: '-20% 0px -20% 0px'
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-revealed', 'active');
+            obs.unobserve(entry.target);
         });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
+    });
 
-        slides.forEach(slide => slideObserver.observe(slide));
-    }
+    revealElements.forEach((el) => observer.observe(el));
+}
 
-    // 7. FAQ Accordion Toggle
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
+/* Chiffres clés animés.
+   Réservé à la bande de chiffres de l'accueil : la surface (1 200 m²) est le
+   principal argument de cette salle, le décompte amène l'œil dessus au moment
+   où la bande entre à l'écran. Une seule exécution, pas de boucle. */
+function initCounters(reduceMotion) {
+    const counters = document.querySelectorAll('.stat-home strong[data-count-to], .hero-stats strong[data-count-to]');
+    if (counters.length === 0) return;
+
+    const render = (el, value) => {
+        const suffix = el.dataset.suffix ? ' ' + el.dataset.suffix : '';
+        const text = value >= 1000
+            ? Math.floor(value / 1000) + '\u202f' + String(value % 1000).padStart(3, '0')
+            : String(value);
+        el.textContent = text + suffix;
+    };
+
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+    const run = (el) => {
+        const target = Number(el.dataset.countTo);
+        if (!Number.isFinite(target)) return;
+        const duration = 1300;
+        const start = performance.now();
+        const step = (now) => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            render(el, Math.round(target * eased));
+            if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            run(entry.target);
+            obs.unobserve(entry.target);
+        });
+    }, { threshold: 0.6 });
+
+    counters.forEach((el) => {
+        render(el, 0);
+        observer.observe(el);
+    });
+}
+
+function initHeroParallax(reduceMotion) {
+    const img = document.querySelector('.hero-visual img');
+    const hero = document.querySelector('.hero');
+    if (!img || !hero || reduceMotion) return;
+
+    let ticking = false;
+    const update = () => {
+        ticking = false;
+        const rect = hero.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        const shift = Math.min(Math.max(-rect.top, 0), 80) * 0.22;
+        img.style.transform = 'translate3d(0, ' + shift + 'px, 0) scale(1.06)';
+    };
+
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+    }, { passive: true });
+}
+
+function initFaq() {
+    document.querySelectorAll('.faq-question').forEach((question) => {
+        const item = question.parentElement;
+        const answer = question.nextElementSibling;
+        question.setAttribute('aria-expanded', 'false');
+
         question.addEventListener('click', () => {
-            const item = question.parentElement;
-            const answer = question.nextElementSibling;
-            
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                answer.style.maxHeight = null;
-            } else {
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                });
-                
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach((otherItem) => {
+                otherItem.classList.remove('active');
+                const otherQ = otherItem.querySelector('.faq-question');
+                const otherA = otherItem.querySelector('.faq-answer');
+                if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
+                if (otherA) otherA.style.maxHeight = null;
+            });
+
+            if (!isOpen) {
                 item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
+                question.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         });
     });
-});
+}
+
+function initBackToTop(reduceMotion) {
+    const topBtn = document.createElement('button');
+    topBtn.type = 'button';
+    topBtn.className = 'back-to-top';
+    topBtn.setAttribute('aria-label', 'Retour en haut de page');
+    topBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+    document.body.appendChild(topBtn);
+
+    window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('is-visible', window.scrollY > 600);
+    }, { passive: true });
+
+    topBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+}

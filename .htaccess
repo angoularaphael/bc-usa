@@ -1,0 +1,13 @@
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule (^|/)\.git(/|$) - [F,L]
+    RewriteRule ^_audit(/|$) - [F,L]
+    RewriteRule \.(py|pyc|pyo|md)$ - [F,L]
+</IfModule>

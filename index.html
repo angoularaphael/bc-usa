@@ -3,382 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="1 200 m² dédiés à la boxe, au MMA et à la préparation physique, avenue des États-Unis à Toulouse. 2 rings, une cage MMA, des coachs diplômés. Essai gratuit.">
-    <title>Salle de Boxe & MMA à Toulouse | Boxing Center États-Unis</title>
+    <meta name="description" content="Boxing Center Toulouse États-Unis : 1 200 m², 3 espaces, boxe, grappling, fitness et accès libre. 388 avenue des États-Unis, Toulouse. Séance d'essai 10 €.">
+    <title>Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat</title>
+    <link rel="canonical" href="./">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
-
-    <!-- Partage sur les réseaux sociaux -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="./">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
-    <meta property="og:title" content="Salle de Boxe & MMA à Toulouse | Boxing Center États-Unis">
-    <meta property="og:description" content="1 200 m², 2 rings, une cage MMA et 3 espaces spécialisés avenue des États-Unis à Toulouse. Première séance d'essai gratuite.">
+    <meta property="og:title" content="Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat">
+    <meta property="og:description" content="La plus grande salle de sports de combat de France : 1 200 m², 3 espaces de 400 m², avenue des États-Unis à Toulouse. Séance d'essai 10 €.">
+    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="891">
+    <meta property="og:image:alt" content="Cage MMA et ring au Boxing Center Toulouse États-Unis">
     <meta name="twitter:card" content="summary_large_image">
-
-    <!--
-      À COMPLÉTER À LA MISE EN LIGNE — nécessite le domaine de production.
-      Volontairement laissé vide : une URL canonique erronée peut faire
-      désindexer la page. Remplacer https://exemple.fr par le vrai domaine,
-      puis décommenter (à reporter sur les 5 pages).
-
-      <link rel="canonical" href="https://exemple.fr/">
-      <meta property="og:url" content="https://exemple.fr/">
-      <meta property="og:image" content="https://exemple.fr/photo_salle/salle_cage_ring.jpg">
-    -->
-
-    <!-- Style CSS -->
+    <meta name="twitter:title" content="Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat">
+    <meta name="twitter:description" content="La plus grande salle de sports de combat de France : 1 200 m², 3 espaces de 400 m², avenue des États-Unis à Toulouse. Séance d'essai 10 €.">
+    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="photo_salle/hero_gants.webp" type="image/webp" fetchpriority="high">
     <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
-
-    <!-- Données structurées : fiche établissement pour le référencement local.
-         Ne contient que des informations vérifiables présentes sur le site.
-         Volontairement absents : openingHours et aggregateRating (voir rapport). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SportsActivityLocation",
-      "name": "Boxing Center Toulouse États-Unis",
-      "description": "Club de boxe anglaise, boxe pieds-poings, MMA, grappling et préparation physique. 1 200 m² répartis en 3 espaces spécialisés de 400 m².",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "388 avenue des États-Unis",
-        "postalCode": "31200",
-        "addressLocality": "Toulouse",
-        "addressRegion": "Occitanie",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.622285,
-        "longitude": 1.423984
-      },
-      "telephone": "+33562244682",
-      "email": "boxingcenter31@gmail.com",
-      "sameAs": ["https://www.facebook.com/BoxingCenterToulouse/"],
-      "areaServed": {
-        "@type": "City",
-        "name": "Toulouse"
-      },
-      "sport": ["Boxe anglaise", "Kickboxing", "Muay Thaï", "MMA", "Grappling", "Cross Training"],
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "2 rings de compétition", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Cage MMA surélevée", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Espace musculation", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Parking réservé aux membres", "value": true }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "#website",
+          "name": "Boxing Center Toulouse États-Unis",
+          "inLanguage": "fr-FR",
+          "publisher": { "@id": "#club" }
+        },
+        {
+          "@type": "SportsActivityLocation",
+          "@id": "#club",
+          "name": "Boxing Center Toulouse États-Unis",
+          "description": "La plus grande salle de sports de combat de France. 1 200 m² d'entraînement répartis en 3 espaces de 400 m² : striking et travail au sol, boxe, préparation physique.",
+          "image": "photo_salle/salle_cage_ring.jpg",
+          "logo": "logo/logo_transparent_v2.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "388 Avenue des États-Unis",
+            "postalCode": "31200",
+            "addressLocality": "Toulouse",
+            "addressRegion": "Occitanie",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.622285,
+            "longitude": 1.423984
+          },
+          "telephone": "+33562244682",
+          "email": "boxingcenter31@gmail.com",
+          "priceRange": "€",
+          "hasMap": "https://www.google.com/maps?q=388+Avenue+des+États-Unis,+31200+Toulouse",
+          "sameAs": ["https://www.facebook.com/BoxingCenterToulouse/", "https://boxingcenter.fr/salle-de-sport-toulouse/boxing-center-salle-de-toulouse-etats-unis/"],
+          "areaServed": { "@type": "City", "name": "Toulouse" },
+          "sport": ["Boxe anglaise", "Boxe pieds-poings", "Full Contact", "MMA", "Grappling", "Jiu-Jitsu brésilien", "Cross Training", "Hyrox"],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "10:00",
+            "closes": "21:15"
+          }
+        }
       ]
     }
     </script>
+    <script src="js/seo.js"></script>
 </head>
-<body>
+<body class="home">
 
     <a href="#contenu" class="skip-link">Aller au contenu</a>
 
-    <!-- Promo Banner -->
-    <div class="promo-banner" style="background-color: var(--bronze); color: var(--navy-dark); text-align: center; padding: 0.6rem 1rem; font-weight: 700; font-size: 0.95rem; z-index: 1000; position: relative;">
-        Frais d'inscription offerts sur tout abonnement souscrit ce mois-ci. <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" style="color: var(--navy-dark); text-decoration: underline; margin-left: 8px;">Voir les abonnements</a>
-    </div>
-
-    <!-- Header / Navigation -->
     <header>
         <div class="container nav-wrapper">
             <a href="index.html" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Logo" class="header-logo">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
-            
-            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            
-            <ul class="nav-menu">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item active"><a href="index.html" class="nav-link" aria-current="page">Accueil</a></li>
                 <li class="nav-item"><a href="disciplines.html" class="nav-link">Disciplines</a></li>
                 <li class="nav-item"><a href="planning.html" class="nav-link">Plannings</a></li>
                 <li class="nav-item"><a href="clubs.html" class="nav-link">Le Club</a></li>
-                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="nav-link">Séance d'essai</a></li>
-                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/" target="_blank" class="nav-link">Boutique</a></li>
+                <li class="nav-item"><a href="nos-clubs.html" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="abonnements.html" class="nav-link">Abonnements</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            
+
             <div class="nav-cta">
-                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Séance d'essai</a>
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Faire un essai</a>
             </div>
         </div>
     </header>
 
     <main id="contenu">
 
-    <!-- Hero Section -->
-    <section class="hero" style="background-image: url('photo_salle/hero-cage-mma.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <!-- Le logo du hero a été retiré : le titre porte désormais le nom du
-                 club en grand, et le logo figure déjà dans l'en-tête. Les trois
-                 répétitions de « Boxing Center » dans le premier écran alourdissaient
-                 la composition. Pour le rétablir :
-                 <img src="logo/logo_transparent_v2.png" alt="" class="hero-logo-img"> -->
+    <section class="hero">
+        <div class="hero-visual">
+            <picture>
+                <source srcset="photo_salle/hero_gants.webp" type="image/webp">
+                <img src="photo_salle/hero_gants.jpg" alt="Gants de boxe dans la salle du Boxing Center Toulouse États-Unis" width="732" height="730" fetchpriority="high" decoding="async">
+            </picture>
+        </div>
 
-            <p class="hero-tagline">Salle de boxe, MMA &amp; préparation physique &middot; Toulouse</p>
-            <h1 class="hero-title">Boxing Center <span>États-Unis</span></h1>
-            <p class="hero-desc">1 200 m², deux rings de compétition, une cage MMA et des coachs diplômés. Que vous n'ayez jamais mis de gants ou que vous prépariez un combat, vous avez votre place ici.</p>
-            <div class="hero-btns">
-                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Réserver ma séance d'essai gratuite</a>
-                <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" class="btn btn-secondary">Voir les tarifs</a>
+        <div class="hero-stage">
+            <div class="hero-copy">
+                <p class="hero-tagline">Club de boxe &amp; sports de combat · Toulouse</p>
+                <h1 class="hero-title">
+                    <picture>
+                        <source srcset="logo/wordmark_boxing_center.webp" type="image/webp">
+                        <img class="hero-lockup" src="logo/wordmark_boxing_center.png" alt="Boxing Center États-Unis" width="494" height="329">
+                    </picture>
+                </h1>
+                <p class="hero-desc">La plus grande salle de sports de combat de France. Toutes les disciplines, un seul club, avenue des États-Unis.</p>
+                <div class="hero-btns">
+                    <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn hero-btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+                        Réserver un essai
+                    </a>
+                    <a href="clubs.html" class="btn hero-btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16" fill="currentColor" stroke="none"></polygon></svg>
+                        Découvrir le club
+                    </a>
+                </div>
+                <ul class="hero-stats" aria-label="Le club en chiffres">
+                    <li>
+                        <strong data-count-to="1200" data-suffix="m²">1 200 m²</strong>
+                        <span>de superficie</span>
+                    </li>
+                    <li>
+                        <strong data-count-to="3">3</strong>
+                        <span>espaces de 400 m²</span>
+                    </li>
+                    <li>
+                        <strong data-count-to="5">5</strong>
+                        <span>salles du réseau</span>
+                    </li>
+                    <li>
+                        <strong>6j/7</strong>
+                        <span>d’ouverture</span>
+                    </li>
+                </ul>
             </div>
-            <!-- Réassurance : lève les 3 objections classiques avant le premier clic. -->
-            <ul class="hero-reassurance">
-                <li>Séance d'essai gratuite et sans engagement</li>
-                <li>Gants et protections prêtés</li>
-                <li>Parking réservé aux membres</li>
+        </div>
+
+        <div class="hero-band">
+            <article>
+                <h2>Toutes les disciplines</h2>
+                <p>Boxe anglaise, thaï, kick boxing, MMA, grappling et plus.</p>
+            </article>
+            <article>
+                <h2>Coachs</h2>
+                <p>Coach diplômé et spécialisé dans chaque discipline.</p>
+            </article>
+            <article>
+                <h2>Plannings</h2>
+                <p>Cours pour tous les niveaux, sans réservation.</p>
+            </article>
+            <article>
+                <h2>Le club</h2>
+                <p>388 avenue des États-Unis, Toulouse.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="editorial-split" aria-labelledby="identite-title">
+        <div class="editorial-media">
+            <picture>
+                <source srcset="photo_salle/mma_grappling_sol-1200.webp" type="image/webp">
+                <img src="photo_salle/mma_grappling_sol.jpg" alt="Travail au sol sur les tatamis du Boxing Center Toulouse États-Unis" width="1600" height="1066" loading="lazy" decoding="async">
+            </picture>
+        </div>
+        <div class="editorial-copy">
+            <p class="script-caption script-soft">Depuis 2016 à Toulouse</p>
+            <span class="eyebrow">Le club</span>
+            <h2 id="identite-title">Un club de combat ouvert à tout le monde.</h2>
+            <p>Boxing Center est né à Toulouse en 2016, inspiré des salles américaines. La salle des États-Unis en est la plus grande : 1 200 m² répartis en trois espaces de 400 m², pensés pour que la boxe, le sol et la préparation physique cohabitent sans se gêner.</p>
+            <ul class="editorial-points">
+                <li>Cours collectifs illimités, sans réservation</li>
+                <li>Musculation, cardio et cross-training en accès libre 6j/7, de 10h à 21h15</li>
+                <li>Votre abonnement ouvre les 5 salles du réseau</li>
+            </ul>
+            <a href="clubs.html" class="btn btn-secondary">Découvrir la salle</a>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="preuve-title">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Pourquoi ici</span>
+                    <h2 id="preuve-title">Un encadrement <span>qui tient la route</span></h2>
+                </div>
+            </div>
+            <div class="proof-grid">
+                <article class="proof-item">
+                    <h3>Depuis 2016</h3>
+                    <p>Le club a ouvert sa première salle à Toulouse en 2016. Il en compte cinq aujourd'hui.</p>
+                </article>
+                <article class="proof-item">
+                    <h3>FFBoxe &amp; FFKMDA</h3>
+                    <p>Complexes affiliés aux fédérations : licences, compétitions officielles, coachs diplômés.</p>
+                </article>
+                <article class="proof-item">
+                    <h3>Plus de 40 % de femmes</h3>
+                    <p>La proportion la plus élevée de la région, avec des cours exclusivement féminins.</p>
+                </article>
+                <article class="proof-item">
+                    <h3>Du loisir à la compétition</h3>
+                    <p>Le club a formé de nombreux champions, dont certains sont passés professionnels.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg-alt" id="disciplines" aria-labelledby="disciplines-title">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Les disciplines</span>
+                    <h2 id="disciplines-title">Que peut-on <span>pratiquer ?</span></h2>
+                    <p>Trois familles principales, plus les cours de préparation physique et les créneaux enfants.</p>
+                </div>
+                <a href="disciplines.html" class="btn btn-secondary">Tout voir</a>
+            </div>
+            <div class="disc-tiles">
+                <a href="disciplines.html" class="disc-tile">
+                    <picture>
+                        <source srcset="photo_salle/DSC01029-800.webp" type="image/webp">
+                        <img src="photo_salle/DSC01029.jpg" alt="Travail aux pattes d'ours en boxe anglaise" width="1024" height="682" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="disc-tile-body">
+                        <span class="feature-tag">Les poings</span>
+                        <h3>Boxe anglaise</h3>
+                        <p>Loisir et compétition, club affilié FFBoxe.</p>
+                        <span class="card-arrow">En savoir plus →</span>
+                    </div>
+                </a>
+                <a href="disciplines.html" class="disc-tile">
+                    <picture>
+                        <source srcset="photo_salle/taii-800.webp" type="image/webp">
+                        <img src="photo_salle/taii.jpg" alt="Coup de genou travaillé aux paos sur le ring" width="1024" height="682" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="disc-tile-body">
+                        <span class="feature-tag">Pieds-poings</span>
+                        <h3>Kick &amp; Muay Thaï</h3>
+                        <p>Full contact, K1, l'art des huit armes.</p>
+                        <span class="card-arrow">En savoir plus →</span>
+                    </div>
+                </a>
+                <a href="disciplines.html" class="disc-tile">
+                    <picture>
+                        <source srcset="photo_salle/mma_cage-800.webp" type="image/webp">
+                        <img src="photo_salle/mma_cage.jpg" alt="Cage MMA officielle et tatamis de grappling" width="1600" height="1477" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="disc-tile-body">
+                        <span class="feature-tag">Le sol</span>
+                        <h3>MMA, grappling &amp; JJB</h3>
+                        <p>Cage officielle et 400 m² de tatamis.</p>
+                        <span class="card-arrow">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="disc-chips" aria-label="Autres cours et accès">
+                <li><a href="disciplines.html">Musculation &amp; cardio <em>accès libre 6j/7</em></a></li>
+                <li><a href="disciplines.html">Cross-training <em>haltérophilie, cardio</em></a></li>
+                <li><a href="planning.html#fitness">Hyrox <em>cours mixtes</em></a></li>
+                <li><a href="planning.html#fitness">Lady Punch <em>100 % féminin</em></a></li>
+                <li><a href="disciplines.html">Street Workout <em>cage de callisthénie</em></a></li>
+                <li><a href="planning.html#boxe">Cours enfants <em>dès 3 ans</em></a></li>
             </ul>
         </div>
     </section>
 
-    <!-- Intro Section / L'Expérience -->
-    <section class="section">
-        <div class="container grid-2">
-            <div class="feature-info">
-
-                <h2 class="feature-title">Le plus grand complexe de combat <br><span>Avenue des États-Unis</span></h2>
-                <p class="feature-desc">Pour notre 6ᵉ club, nous avons repoussé toutes les limites. Bien plus qu'une simple salle, le Boxing Center États-Unis est un complexe hors norme de 1 200 m² dédié au dépassement de soi. Boxe, MMA, musculation et cross-training : nous avons réuni l'excellence de toutes nos disciplines dans un espace premium, conçu pour vous faire vivre une expérience d'entraînement inégalée.</p>
-                <ul class="feature-list">
-                    <li class="feature-list-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>1 200 m² d'entraînement et 3 espaces de 400 m²</span>
-                    </li>
-                    <li class="feature-list-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>2 rings de compétition et cage MMA surélevée officielle</span>
-                    </li>
-                    <li class="feature-list-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>Cage Cross Training/Street Workout & 16 sacs de frappe</span>
-                    </li>
-                </ul>
-                <a href="clubs.html" class="btn btn-secondary">Découvrir les espaces</a>
-            </div>
-            <div class="feature-img-wrapper">
-                <img src="photo_salle/DSC00983.jpg" alt="Boxing Center Ring" class="feature-img">
-            </div>
+    <section class="immersive" aria-labelledby="espaces-title">
+        <picture>
+            <source srcset="photo_salle/hero-cage-mma.webp" type="image/webp">
+            <img src="photo_salle/hero-cage-mma.jpg" alt="Entraînement dans la cage MMA du Boxing Center" width="1600" height="863" loading="lazy" decoding="async">
+        </picture>
+        <div class="container immersive-body">
+            <span class="eyebrow">Les espaces</span>
+            <h2 id="espaces-title">Trois salles <span>en une</span></h2>
+            <p>Chaque espace fait 400 m² et vit indépendamment : on peut boxer et s'entraîner en cross-training au même moment, sans jamais partager le même tapis.</p>
+            <a href="clubs.html" class="btn btn-primary double-outline-element">Visiter la salle</a>
         </div>
     </section>
 
-    <!-- Disciplines Sticky Scroll Section -->
-    <section class="section section-bg-alt sticky-scroll-section">
-        <div class="container sticky-scroll-container">
-            
-            <!-- Left Side: Sticky Media Column -->
-            <div class="sticky-media-col">
-                <div class="media-frame double-outline-element">
-                    <img src="photo_salle/DSC01026 (1).jpg" alt="Boxe Anglaise" class="sticky-img active" id="img-boxe">
-                    <img src="photo_salle/salle_cage_ring.jpg" alt="Espace MMA : cage surélevée et ring" class="sticky-img" id="img-mma">
-                    <img src="photo_salle/taii.jpg" alt="Muay Thai" class="sticky-img" id="img-thai">
-                    <img src="photo_salle/ChatGPT Image 20 juin 2026, 13_18_30.jpg" alt="Cardio Boxing et Sacs de frappe" class="sticky-img" id="img-cardio">
-                </div>
-            </div>
-
-            <!-- Right Side: Scrolling Content Column -->
-            <div class="scrolling-content-col">
-                
-                <!-- Slide 1: Boxe Anglaise -->
-                <div class="content-slide" data-target="img-boxe" onclick="window.location.href='disciplines.html'">
-                    <span class="img-card-badge">Espace Boxe - 400 m²</span>
-                    <h3 class="slide-title">Boxe Anglaise</h3>
-                    <p class="slide-desc">La boxe anglaise est la discipline reine des poings. Axé sur la précision et la technique, cet espace comprend 2 rings de compétition et 400 m² de tapis d'entraînement.</p>
-                    <span class="slide-link">Découvrir la boxe anglaise →</span>
-                </div>
-
-                <!-- Slide 2: MMA & Travail au Sol -->
-                <div class="content-slide" data-target="img-mma" onclick="window.location.href='disciplines.html'">
-                    <span class="img-card-badge">Espace Striking & Sol - 400 m²</span>
-                    <h3 class="slide-title">MMA & Grappling (Sol)</h3>
-                    <p class="slide-desc">Équipé d'une cage surélevée officielle de MMA, de 400 m² de tatamis, de protections murales et de panneaux de séparation pour le travail spécifique du cage control.</p>
-                    <span class="slide-link">Découvrir l'espace MMA →</span>
-                </div>
-
-                <!-- Slide 3: Muay Thai -->
-                <div class="content-slide" data-target="img-thai" onclick="window.location.href='disciplines.html'">
-                    <span class="img-card-badge">Puissance & Tradition</span>
-                    <h3 class="slide-title">Muay Thai</h3>
-                    <p class="slide-desc">L'Art des 8 membres. Intègre les frappes de poings, pieds, coudes et genoux. Une discipline exigeante pour forger un mental d'acier et une condition physique hors norme.</p>
-                    <span class="slide-link">Découvrir le Muay Thai →</span>
-                </div>
-
-                <!-- Slide 4: Cross-Training -->
-                <div class="content-slide" data-target="img-cardio" onclick="window.location.href='disciplines.html'">
-                    <span class="img-card-badge">Force & Endurance</span>
-                    <h3 class="slide-title">Cross-Training</h3>
-                    <p class="slide-desc">Dépassez vos limites avec nos séances de cross-training. Une méthode d'entraînement intense et fonctionnelle combinant haltérophilie, gymnastique et cardio pour des résultats optimaux.</p>
-                    <span class="slide-link">Découvrir le Cross-Training →</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Découvrir nos offres -->
-    <section class="section section-bg-alt" style="border-top: 1px solid var(--border-color);">
-        <div class="container" style="text-align: center;">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <span class="feature-tag">Rejoignez le club</span>
-                <h2 class="section-title" style="margin-bottom: 2rem;">L'Expérience <span>Boxing Center</span></h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">
-                    Rejoindre Boxing Center Toulouse États-Unis, c'est accéder à <strong>1 200 m² d'installations haut de gamme</strong> et à une communauté passionnée. Que vous soyez débutant ou compétiteur, nos formules s'adaptent à vos besoins avec un accès illimité 7j/7 à tous les espaces et à l'ensemble des cours collectifs dispensés par nos coachs experts.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" class="btn btn-primary double-outline-element" style="font-size: 1.1rem; padding: 1rem 2rem;">Découvrir nos abonnements</a>
-                    <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">Réserver un essai gratuit</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials / Réassurance -->
-    <section class="section" style="border-top: 1px solid var(--border-color);">
+    <section class="section" id="espaces">
         <div class="container">
-            <h2 class="section-title">L'avis de <span>nos membres</span></h2>
-            <div class="grid-4">
-                <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
-                        <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Une salle incroyable, immense et super bien équipée. Les coachs sont super pédagogues et l'ambiance est hyper motivante."</p>
+            <div class="bento-spaces">
+                <a href="clubs.html" class="bento-tile bento-tile--lg">
+                    <picture>
+                        <source srcset="club/img1-1200.webp" type="image/webp">
+                        <img src="club/img1.jpg" alt="Ring de compétition et large surface de tatamis" width="1200" height="1600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="bento-tile-body">
+                        <span class="feature-tag">400 m²</span>
+                        <h3>Striking &amp; Sol</h3>
+                        <p>Cage surélevée officielle, tatamis, protections murales. Grappling, jiu-jitsu et MMA.</p>
+                        <span class="card-arrow">Voir le club →</span>
                     </div>
-                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Célia M. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Boxe Anglaise</span></h3>
-                </div>
-                <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
-                        <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"La cage de MMA est au top et l'espace de lutte/grappling de 400m² est unique à Toulouse. Le meilleur club de la région sans hésiter."</p>
+                </a>
+                <a href="disciplines.html" class="bento-tile">
+                    <picture>
+                        <source srcset="photo_salle/DSC01026 (1).webp" type="image/webp">
+                        <img src="photo_salle/DSC01026 (1).jpg" alt="Entraînement de boxe anglaise sur le ring" width="1600" height="1066" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="bento-tile-body">
+                        <span class="feature-tag">400 m²</span>
+                        <h3>Boxe</h3>
+                        <p>Anglaise, pieds-poings, full contact. Deux rings de compétition.</p>
+                        <span class="card-arrow">Disciplines →</span>
                     </div>
-                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Guillaume P. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Compétiteur MMA</span></h3>
-                </div>
-                <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
-                        <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Super cours collectifs de Boxing Lady et de préparation physique. Les vestiaires et les équipements de musculation sont très propres."</p>
+                </a>
+                <a href="planning.html#fitness" class="bento-tile">
+                    <picture>
+                        <source srcset="photo_salle/DSC00983.webp" type="image/webp">
+                        <img src="photo_salle/DSC00983.jpg" alt="Espace sacs de frappe et préparation physique" width="1600" height="1200" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="bento-tile-body">
+                        <span class="feature-tag">400 m²</span>
+                        <h3>Préparation physique</h3>
+                        <p>Musculation, cardio, 16 sacs, cage de street workout.</p>
+                        <span class="card-arrow">Planning →</span>
                     </div>
-                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Manon L. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Fitness & Lady</span></h3>
-                </div>
-                <div class="card testimonial-card" style="padding: 2rem; border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="color: var(--bronze); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>
-                        <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5;">"Grand espace musculation et de cross-training en accès libre. Idéal pour s'entraîner seul ou en groupe. Coachs à l'écoute."</p>
-                    </div>
-                    <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0;">Johnson T. <span style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--bronze); display: block; font-weight: 400; text-transform: none; margin-top: 4px;">Membre Préparation Physique</span></h3>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section section-bg-alt" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="section section-bg-alt" id="coachs" aria-labelledby="coachs-title">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">L'encadrement</span>
+                    <h2 id="coachs-title">Les coachs de <span>cette salle</span></h2>
+                    <p>Deux référents présents exclusivement à Toulouse États-Unis.</p>
+                </div>
+                <a href="clubs.html" class="btn btn-secondary">Le club &amp; l'équipe</a>
+            </div>
+            <div class="coach-home-grid">
+                <article class="coach-home">
+                    <picture>
+                        <source srcset="photo_salle/photo_coach.webp" type="image/webp">
+                        <img src="photo_salle/photo_coach.jpg" alt="Renaud Chavaudra" width="584" height="392" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="coach-home-body">
+                        <h3>Renaud Chavaudra</h3>
+                        <p class="coach-role">Coach référent · Boxe pieds-poings</p>
+                        <p>Plusieurs fois champion de France en Full Contact et Kick-Boxing. Kick-Boxing / K1 et Savate / Boxe Française, exclusivement à Toulouse États-Unis.</p>
+                    </div>
+                </article>
+                <article class="coach-home">
+                    <img src="photo_salle/photo_coach_zouhir.webp" alt="Zouhir Boumenir" width="640" height="800" loading="lazy" decoding="async">
+                    <div class="coach-home-body">
+                        <h3>Zouhir Boumenir</h3>
+                        <p class="coach-role">Grappling &amp; Jiu-Jitsu brésilien</p>
+                        <p>Ceinture noire de jiu-jitsu brésilien. Travail au sol progressif, du premier cours au niveau confirmé, à Toulouse États-Unis.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="planning" aria-labelledby="planning-title">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Les horaires</span>
+                    <h2 id="planning-title">Trouvez votre <span>créneau</span></h2>
+                    <p>Un planning par espace. Cours collectifs sans réservation, école de boxe et accès libre.</p>
+                </div>
+                <a href="planning.html" class="btn btn-secondary">Tous les plannings</a>
+            </div>
+            <div class="planning-preview">
+                <a href="planning.html#boxe" class="planning-card">
+                    <picture>
+                        <source srcset="photo_salle/DSC01026 (1).webp" type="image/webp">
+                        <img src="photo_salle/DSC01026 (1).jpg" alt="Cours de boxe anglaise dans la salle Boxe" width="800" height="530" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="planning-card-body">
+                        <span class="feature-tag">Salle Boxe</span>
+                        <h3>Boxe</h3>
+                        <p>Boxe anglaise, pieds-poings / kick et cours enfants.</p>
+                        <span class="card-arrow">Ouvrir le planning →</span>
+                    </div>
+                </a>
+                <a href="planning.html#fitness" class="planning-card">
+                    <picture>
+                        <source srcset="photo_salle/DSC00983.webp" type="image/webp">
+                        <img src="photo_salle/DSC00983.jpg" alt="Espace de préparation physique et cross-training" width="800" height="600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="planning-card-body">
+                        <span class="feature-tag">Préparation physique</span>
+                        <h3>Fitness</h3>
+                        <p>Hyrox, Boxing HIIT, Cross-Training et Lady Punch.</p>
+                        <span class="card-arrow">Ouvrir le planning →</span>
+                    </div>
+                </a>
+                <a href="planning.html#mma" class="planning-card">
+                    <picture>
+                        <source srcset="photo_salle/mma_cage-800.webp" type="image/webp">
+                        <img src="photo_salle/mma_cage.jpg" alt="Cage MMA du Boxing Center Toulouse États-Unis" width="800" height="740" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="planning-card-body">
+                        <span class="feature-tag">Striking &amp; Sol</span>
+                        <h3>MMA &amp; Sol</h3>
+                        <p>MMA, grappling, jiu-jitsu et école 10/16 ans.</p>
+                        <span class="card-arrow">Ouvrir le planning →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg-alt" id="abonnements" aria-labelledby="abo-home-title">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Les tarifs</span>
+                    <p class="script-energy type-kicker">C'est le moment</p>
+                    <h2 id="abo-home-title">S'abonner <span>au club</span></h2>
+                    <p>Cours illimités, accès libre 6j/7 et les 5 salles. Deux offres sont en cours sur la boutique officielle.</p>
+                </div>
+                <a href="abonnements.html" class="btn btn-secondary">Comparer les formules</a>
+            </div>
+            <div class="home-plans">
+                <article class="plan-card">
+                    <span class="plan-badge">Offre du moment</span>
+                    <h3>Sans engagement</h3>
+                    <p class="plan-period">Prélèvement toutes les 4 semaines</p>
+                    <p class="plan-price">29 € <small>/ 1<sup>re</sup> échéance</small></p>
+                    <p class="plan-was">Prix normal 44 €</p>
+                    <ul>
+                        <li>Puis 44 € toutes les 4 semaines</li>
+                        <li>Cours illimités, sans réservation</li>
+                        <li>Résiliation sans préavis</li>
+                    </ul>
+                    <a href="https://boutique.boxingcenter.fr/offre/29" target="_blank" rel="noopener" class="btn btn-secondary">Choisir cette formule</a>
+                    <p class="plan-fineprint">Badge d'accès 34 € en plus</p>
+                </article>
+                <article class="plan-card plan-card--featured">
+                    <span class="plan-badge">Recommandé</span>
+                    <h3>L'année complète</h3>
+                    <p class="plan-period">12 mois · 1× ou 4× sans frais</p>
+                    <p class="plan-price">259 € <small>/ an</small></p>
+                    <p class="plan-was">Prix normal 400 €</p>
+                    <ul>
+                        <li>Soit environ 21 € par mois</li>
+                        <li>Mêmes accès que la formule mensuelle</li>
+                        <li>Badge d'accès inclus</li>
+                    </ul>
+                    <a href="https://boutique.boxingcenter.fr/offre/259" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Je m'abonne</a>
+                    <p class="plan-fineprint">L'option la plus économique sur 12 mois</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg-alt" aria-labelledby="faq-title">
         <div class="container" style="max-width: 800px;">
-            <h2 class="section-title">Foire Aux <span>Questions</span></h2>
-            
+            <h2 id="faq-title" class="section-title">Foire Aux <span>Questions</span></h2>
             <div class="faq-accordion">
                 <div class="faq-item">
-                    <button class="faq-question">Comment se déroule la première séance d'essai ? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Comment se déroule la séance d'essai ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Il vous suffit de réserver votre séance en ligne sur notre boutique ou par téléphone. Présentez-vous 15 minutes avant le début du cours avec une tenue de sport adaptée (t-shirt et short/legging), une bouteille d'eau et une serviette. Nous vous prêtons les gants et les protections pour votre premier essai !</p>
+                        <p>La séance d'essai coûte 10 €. Réservez-la en ligne (activité au choix) ou par téléphone. Présentez-vous avant le cours en tenue de sport. Le matériel peut être prêté pour cette séance.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Quel équipement dois-je apporter pour les cours ? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Je suis débutant, est-ce que c'est pour moi ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Pour la boxe anglaise et pieds-poings, une paire de gants de boxe, des bandes de protection et un protège-dents sont indispensables. Pour le MMA et le Grappling, un rashguard et un short de combat sont recommandés. Vous pouvez acheter tout votre équipement directement dans notre boutique officielle au club.</p>
+                        <p>Oui. Les cours sont orientés loisir, apprentissage et remise en forme, et les coachs adaptent les exercices à chaque niveau. Il n'est pas nécessaire d'avoir déjà pratiqué ni d'être en forme pour commencer.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Quelles sont vos formules d'abonnements ? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Quand puis-je venir ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Nous proposons plusieurs formules adaptées à vos besoins : des abonnements annuels avec engagement pour bénéficier du meilleur tarif mensuel, ainsi que des formules sans engagement pour un maximum de flexibilité. Des tarifs étudiants et des offres de rentrée sont également disponibles. <a href="https://boutique.boxingcenter.fr/10-abonnements" target="_blank" rel="noopener" style="color: var(--bronze); font-weight: 600;">Consulter les tarifs et abonnements</a>.</p>
+                        <p>Les cours suivent les plannings Boxe, Fitness et MMA &amp; Sol. Les membres ont un accès 6j/7 aux espaces musculation, cardio et cross-training, de 10h à 21h15. Accueil en salle : du lundi au vendredi, 12h–14h et 17h–20h30.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">La salle de Toulouse États-Unis est-elle facile d'accès ? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Quelles sont les formules ? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Oui, notre salle est idéalement située au 388 Avenue des États-Unis, à proximité immédiate de la sortie de périphérique 33b "Lalande". Nous disposons d'un grand parking réservé aux membres pour vous garer facilement.</p>
+                        <p>Cours collectifs illimités + accès libre, avec ou sans engagement, tarif étudiant, formules comptant, et formule enfants / ados à l'année. Badge d'accès : 34 €. <a href="abonnements.html" style="color: var(--bronze); font-weight: 600;">Voir les abonnements</a>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Quel matériel faut-il pour commencer ? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Pour le premier cours, une tenue de sport et une bouteille d'eau suffisent. Les coachs vous conseilleront ensuite pour les gants et les bandages, disponibles à la boutique du club.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Comment venir au club ? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>388 Avenue des États-Unis, 31200 Toulouse, à proximité de la sortie de périphérique 33b « Lalande ». <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" style="color: var(--bronze); font-weight: 600;">Obtenir l'itinéraire</a>.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section" style="text-align: center; border-bottom: 1px solid var(--border-color);">
-        <div class="container">
-            <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Prêt à monter sur le ring ?</h2>
-            <p style="max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem; color: var(--text-secondary);">Faites le premier pas aujourd'hui. Votre première séance d'entraînement est entièrement gratuite et sans engagement.</p>
-            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary double-outline-element" style="font-size: 1.2rem; padding: 1rem 3rem;">Réserver ma séance d'essai gratuite</a>
+    <section class="immersive" aria-labelledby="cta-final-title">
+        <picture>
+            <source srcset="photo_salle/taii-800.webp" type="image/webp">
+            <img src="photo_salle/taii.jpg" alt="Entraînement au Boxing Center Toulouse États-Unis" width="1024" height="682" loading="lazy" decoding="async">
+        </picture>
+        <div class="container immersive-body">
+            <span class="eyebrow">Premier cours</span>
+            <h2 id="cta-final-title">Prêt à enfiler <span class="script script-line">les gants</span> ?</h2>
+            <p>Séance d'essai à 10 €, cours encadré, matériel prêté. Choisissez votre activité et votre créneau.</p>
+            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Réserver ma séance d'essai</a>
             <p style="margin-top: 1.25rem; font-size: 0.95rem; color: var(--text-muted);">
-                Une question avant de venir ? Appelez-nous au
-                <a href="tel:+33562244682" style="color: var(--bronze); font-weight: 600;">05 62 24 46 82</a>
-                ou <a href="contact.html" style="color: var(--bronze); font-weight: 600;">écrivez-nous</a>.
+                Téléphone : <a href="tel:+33562244682" style="color: var(--bronze); font-weight: 600;">05 62 24 46 82</a>
             </p>
         </div>
     </section>
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-            <!-- Colonne 1 : Logo & Infos -->
             <div class="footer-about">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" style="margin-bottom: 1.5rem;">
+                <div class="footer-brand">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
+                </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
-                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
-                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:0562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
-                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                    <li>388 Avenue des États-Unis, 31200 Toulouse</li>
+                    <li><a href="tel:+33562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
                 </ul>
             </div>
-            
-            <!-- Colonne 2 : Horaires -->
             <div>
-                <h3 class="footer-title">Plannings & Horaires</h3>
+                <h3 class="footer-title">Accès rapide</h3>
                 <ul class="footer-links">
-                    <li><a href="planning.html" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="disciplines.html">Disciplines</a></li>
+                    <li><a href="planning.html">Plannings</a></li>
+                    <li><a href="clubs.html">Le club</a></li>
+                    <li><a href="nos-clubs.html">Nos clubs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
             <div>
-                <h3 class="footer-title">Boxing Center</h3>
-                <ul class="footer-links" style="margin-bottom: 2rem;">
-                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
-                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                <h3 class="footer-title">Rejoindre le club</h3>
+                <ul class="footer-links" style="margin-bottom: 1.5rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" style="color: var(--bronze); font-weight:700;">Séance d'essai 10 €</a></li>
+                    <li><a href="abonnements.html">Abonnements</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank" rel="noopener">Boutique</a></li>
                 </ul>
                 <div class="social-links">
                     <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                    </a>
                 </div>
             </div>
         </div>
-
         <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
             <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Barre d'action fixe : visible uniquement en dessous de 992px, là où
-         .nav-cta est masqué et où aucun CTA n'était accessible sans ouvrir le menu. -->
     <div class="mobile-cta-bar">
-        <a href="tel:+33562244682" class="btn btn-secondary">Appeler</a>
-        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary">Séance d'essai</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
     </div>
 
-    <!-- Données structurées FAQ : reprend mot pour mot les questions/réponses
-         affichées ci-dessus, condition requise par Google. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -386,41 +594,39 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Comment se déroule la première séance d'essai ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il vous suffit de réserver votre séance en ligne sur notre boutique ou par téléphone. Présentez-vous 15 minutes avant le début du cours avec une tenue de sport adaptée (t-shirt et short/legging), une bouteille d'eau et une serviette. Nous vous prêtons les gants et les protections pour votre premier essai."
-          }
+          "name": "Comment se déroule la séance d'essai ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La séance d'essai coûte 10 €. Réservez-la en ligne ou par téléphone. Le matériel peut être prêté pour cette séance." }
         },
         {
           "@type": "Question",
-          "name": "Quel équipement dois-je apporter pour les cours ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pour la boxe anglaise et pieds-poings, une paire de gants de boxe, des bandes de protection et un protège-dents sont indispensables. Pour le MMA et le Grappling, un rashguard et un short de combat sont recommandés. Vous pouvez acheter tout votre équipement directement dans notre boutique officielle au club."
-          }
+          "name": "Je suis débutant, est-ce que c'est pour moi ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Les cours sont orientés loisir, apprentissage et remise en forme, et les coachs adaptent les exercices à chaque niveau." }
         },
         {
           "@type": "Question",
-          "name": "Quelles sont vos formules d'abonnements ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nous proposons plusieurs formules adaptées à vos besoins : des abonnements annuels avec engagement pour bénéficier du meilleur tarif mensuel, ainsi que des formules sans engagement pour un maximum de flexibilité. Des tarifs étudiants et des offres de rentrée sont également disponibles."
-          }
+          "name": "Quand puis-je venir ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Les cours suivent les plannings Boxe, Fitness et MMA & Sol. Les membres ont un accès 6j/7 aux espaces musculation, cardio et cross-training, de 10h à 21h15. Accueil en salle : du lundi au vendredi, 12h–14h et 17h–20h30." }
         },
         {
           "@type": "Question",
-          "name": "La salle de Toulouse États-Unis est-elle facile d'accès ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, notre salle est idéalement située au 388 avenue des États-Unis à Toulouse, à proximité immédiate de la sortie de périphérique 33b Lalande. Nous disposons d'un grand parking réservé aux membres pour vous garer facilement."
-          }
+          "name": "Quelles sont les formules ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cours collectifs illimités et accès libre, avec ou sans engagement, tarif étudiant, formules comptant, et formule enfants / ados à l'année. Badge d'accès : 34 €." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel matériel faut-il pour commencer ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pour le premier cours, une tenue de sport et une bouteille d'eau suffisent. Les coachs conseillent ensuite pour les gants et les bandages, disponibles à la boutique du club." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment venir au club ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "388 Avenue des États-Unis, 31200 Toulouse, à proximité de la sortie de périphérique 33b Lalande." }
         }
       ]
     }
     </script>
 
-    <!-- Scripts -->
+    <script src="js/offers.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

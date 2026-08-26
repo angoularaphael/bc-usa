@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="1 200 m² avenue des États-Unis à Toulouse : 2 rings, cage MMA, tatamis, 16 sacs de frappe et espace musculation. Visite en images et coach référent.">
-    <title>Nos Installations | Boxing Center Toulouse États-Unis</title>
+    <title>Le club | Boxing Center Toulouse États-Unis — 1 200 m²</title>
+    <link rel="canonical" href="clubs.html">
+    <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="clubs.html">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
-    <meta property="og:title" content="Nos Installations | Boxing Center Toulouse États-Unis">
+    <meta property="og:title" content="Le club | Boxing Center Toulouse États-Unis — 1 200 m²">
     <meta property="og:description" content="1 200 m² à Toulouse : 2 rings, cage MMA, tatamis et espace musculation. Visite en images.">
-    <!-- canonical / og:url / og:image : à compléter avec le domaine de production (voir index.html) -->
+    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="891">
+    <meta property="og:image:alt" content="Cage MMA et ring au Boxing Center Toulouse États-Unis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le club | Boxing Center Toulouse États-Unis — 1 200 m²">
+    <meta name="twitter:description" content="1 200 m² à Toulouse : 2 rings, cage MMA, tatamis et espace musculation. Visite en images.">
+    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
     <!-- Style CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .page-banner {
@@ -202,14 +217,22 @@
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
         }
         /* Apparition en cascade des pastilles quand le groupe est révélé */
-        .chip-list.reveal.active .chip { animation: chipIn 0.45s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
-        .chip-list.reveal.active .chip:nth-child(1) { animation-delay: 0.05s; }
-        .chip-list.reveal.active .chip:nth-child(2) { animation-delay: 0.11s; }
-        .chip-list.reveal.active .chip:nth-child(3) { animation-delay: 0.17s; }
-        .chip-list.reveal.active .chip:nth-child(4) { animation-delay: 0.23s; }
-        .chip-list.reveal.active .chip:nth-child(5) { animation-delay: 0.29s; }
-        .chip-list.reveal.active .chip:nth-child(6) { animation-delay: 0.35s; }
-        .chip-list.reveal.active .chip:nth-child(7) { animation-delay: 0.41s; }
+            .chip-list.reveal.active .chip,
+            .chip-list.reveal.is-revealed .chip { animation: chipIn 0.45s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
+            .chip-list.reveal.active .chip:nth-child(1),
+            .chip-list.reveal.is-revealed .chip:nth-child(1) { animation-delay: 0.05s; }
+            .chip-list.reveal.active .chip:nth-child(2),
+            .chip-list.reveal.is-revealed .chip:nth-child(2) { animation-delay: 0.11s; }
+            .chip-list.reveal.active .chip:nth-child(3),
+            .chip-list.reveal.is-revealed .chip:nth-child(3) { animation-delay: 0.17s; }
+            .chip-list.reveal.active .chip:nth-child(4),
+            .chip-list.reveal.is-revealed .chip:nth-child(4) { animation-delay: 0.23s; }
+            .chip-list.reveal.active .chip:nth-child(5),
+            .chip-list.reveal.is-revealed .chip:nth-child(5) { animation-delay: 0.29s; }
+            .chip-list.reveal.active .chip:nth-child(6),
+            .chip-list.reveal.is-revealed .chip:nth-child(6) { animation-delay: 0.35s; }
+            .chip-list.reveal.active .chip:nth-child(7),
+            .chip-list.reveal.is-revealed .chip:nth-child(7) { animation-delay: 0.41s; }
 
         /* --- Grille d'équipements --- */
         .amenities-grid {
@@ -343,9 +366,15 @@
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center 18%;
             border: 3px solid var(--bronze);
             flex-shrink: 0;
             transition: var(--transition-smooth);
+        }
+        .coach-head .coach-initials {
+            width: 100px;
+            height: 100px;
+            font-size: 1.8rem;
         }
         .coach-card:hover .coach-avatar {
             transform: scale(1.06);
@@ -555,6 +584,10 @@
         }
     </style>
     <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"index.html"},{"@type":"ListItem","position":2,"name":"Le club","item":"clubs.html"}]}
+    </script>
+    <script src="js/seo.js"></script>
 </head>
 <body>
 
@@ -564,26 +597,27 @@
     <header>
         <div class="container nav-wrapper">
             <a href="index.html" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Logo" class="header-logo">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
 
-            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
 
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="disciplines.html" class="nav-link">Disciplines</a></li>
-                <li class="nav-item active"><a href="clubs.html" class="nav-link">Le Club</a></li>
-                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="nav-link">Séance d'essai</a></li>
-                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/" target="_blank" class="nav-link">Boutique</a></li>
+                <li class="nav-item"><a href="planning.html" class="nav-link">Plannings</a></li>
+                <li class="nav-item active"><a href="clubs.html" class="nav-link" aria-current="page">Le Club</a></li>
+                <li class="nav-item"><a href="nos-clubs.html" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="abonnements.html" class="nav-link">Abonnements</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-cta">
-                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Séance d'essai</a>
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" class="btn btn-primary double-outline-element">Faire un essai</a>
             </div>
         </div>
     </header>
@@ -591,10 +625,24 @@
     <main id="contenu">
 
     <!-- Page Banner -->
-    <section class="page-banner">
-        <div class="container">
-            <h1 class="anim-up anim-up-1" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem;">Le Club &amp; <span>L'Équipe</span></h1>
-            <p class="anim-up anim-up-2" style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Découvrez l'esprit de notre club et nos installations d'exception pensées pour les compétiteurs comme pour les amateurs de forme.</p>
+    <section class="page-hero">
+        <div class="page-hero-media">
+            <img src="club/img4.jpg" alt="Cage d'entraînement et large zone de tapis pour le grappling" width="1600" height="1066" fetchpriority="high" decoding="async">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="eyebrow">La salle des États-Unis</span>
+            <h1>Le club &amp; <span class="script-soft">l'équipe</span></h1>
+            <p>1 200 m², trois espaces de 400 m², deux rings et une cage officielle. Une salle pensée pour les compétiteurs comme pour ceux qui débutent.</p>
+            <ul class="page-hero-facts">
+                <li>1 200 m²</li>
+                <li>2 rings</li>
+                <li>Cage officielle</li>
+            </ul>
+            <div class="hero-btns">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Faire un essai — 10 €</a>
+                <a href="planning.html" class="btn btn-secondary">Voir le planning</a>
+            </div>
         </div>
     </section>
 
@@ -610,7 +658,10 @@
                     </p>
                 </div>
                 <div class="intro-photo feature-img-wrapper">
-                    <img src="club/img5.jpg" alt="Vue de la salle Boxing Center États-Unis : ring de compétition et tatamis">
+                    <picture>
+                        <source srcset="club/img5.webp" type="image/webp">
+                        <img src="club/img5.jpg" alt="Vue de la salle Boxing Center États-Unis : ring de compétition et tatamis" width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
@@ -649,18 +700,18 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="universe-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </span>
-                    <h3 class="universe-title">Combat debout</h3>
-                    <p class="universe-text">Un espace dédié aux sports de combat debout : boxe anglaise, pieds-poings, Muay Thaï et Full Contact, autour de deux rings de compétition et de nombreux sacs de frappe.</p>
+                    <h3 class="universe-title">Striking &amp; Sol</h3>
+                    <p class="universe-text">Cage surélevée officielle, 400 m² de tatamis, protections murales et panneaux de séparation pour le cage control. Grappling, jiu-jitsu et MMA.</p>
                 </div>
 
                 <div class="card">
                     <span class="universe-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                     </span>
-                    <h3 class="universe-title">Grappling &amp; sol</h3>
-                    <p class="universe-text">Un espace consacré au grappling et au travail au sol, équipé de tatamis et d'une cage d'entraînement pour le travail spécifique du corps à corps.</p>
+                    <h3 class="universe-title">Boxe</h3>
+                    <p class="universe-text">Boxe anglaise et boxe pieds-poings, avec l'arrivée du full contact. Deux rings de compétition et 400 m² de tapis d'entraînement.</p>
                 </div>
 
                 <div class="card">
@@ -668,7 +719,7 @@
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                     </span>
                     <h3 class="universe-title">Préparation physique</h3>
-                    <p class="universe-text">Un espace entièrement dédié à la préparation physique et au fitness : musculation, cardio, Cross Training, Hyrox et Street Workout.</p>
+                    <p class="universe-text">Musculation, cardio, cross-training, Hyrox, Boxing Fitness, Boxing Lady, 16 sacs de frappe et cage de street workout en accès libre.</p>
                 </div>
             </div>
         </div>
@@ -689,7 +740,9 @@
                     <li class="chip">Boxe pieds-poings / Kickboxing</li>
                     <li class="chip">Muay Thaï</li>
                     <li class="chip">Full Contact</li>
+                    <li class="chip">MMA</li>
                     <li class="chip">Grappling</li>
+                    <li class="chip">Jiu-Jitsu brésilien</li>
                 </ul>
             </div>
 
@@ -770,19 +823,19 @@
 
             <div class="gallery-grid">
                 <button type="button" class="gallery-item" data-src="club/img1.jpg" data-alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
-                    <img src="club/img1.jpg" loading="lazy" decoding="async" alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
+                    <img src="club/img1.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
                     <span class="gallery-caption">Ring &amp; tatamis</span>
                 </button>
                 <button type="button" class="gallery-item" data-src="club/img2.jpg" data-alt="Ring au premier plan et cage d'entraînement au fond">
-                    <img src="club/img2.jpg" loading="lazy" decoding="async" alt="Ring au premier plan et cage d'entraînement au fond">
+                    <img src="club/img2.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring au premier plan et cage d'entraînement au fond">
                     <span class="gallery-caption">Ring &amp; cage</span>
                 </button>
                 <button type="button" class="gallery-item" data-src="club/img3.jpg" data-alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
-                    <img src="club/img3.jpg" loading="lazy" decoding="async" alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
+                    <img src="club/img3.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
                     <span class="gallery-caption">Espace au sol</span>
                 </button>
                 <button type="button" class="gallery-item" data-src="club/img4.jpg" data-alt="Cage d'entraînement et large zone de tapis pour le grappling">
-                    <img src="club/img4.jpg" loading="lazy" decoding="async" alt="Cage d'entraînement et large zone de tapis pour le grappling">
+                    <img src="club/img4.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Cage d'entraînement et large zone de tapis pour le grappling">
                     <span class="gallery-caption">Cage &amp; grappling</span>
                 </button>
             </div>
@@ -793,9 +846,10 @@
     <section class="section" style="background: var(--bg-primary);">
         <div class="container">
             <div class="values-band">
-                <img src="photo_salle/salle_cage_ring.jpg" loading="lazy" decoding="async" alt="">
+                <img src="photo_salle/salle_cage_ring.jpg" width="1600" height="891" loading="lazy" decoding="async" alt="Cage MMA et ring de compétition dans la salle">
                 <div class="values-inner">
                     <h2 class="club-h2">Nos <span>Valeurs</span></h2>
+                    <p class="values-sign script">Passion &amp; Discipline</p>
                     <p class="club-lead" style="margin-bottom: 2rem;">
                         Au-delà des installations, Boxing Center véhicule des valeurs fortes et une pratique accessible à tous, quel que soit le niveau.
                     </p>
@@ -822,13 +876,13 @@
     <section class="section section-bg-alt" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="section-title">Coach <span>Référent</span></h2>
+                <h2 class="section-title">Les coachs de <span>cette salle</span></h2>
             </div>
 
             <div class="grid-2 coach-card">
                 <div class="coach-body">
                     <div class="coach-head">
-                        <img src="photo_salle/photo_coach.png" alt="Coach Renaud Chavaudra" class="coach-avatar">
+                        <img src="photo_salle/photo_coach.jpg" alt="Coach Renaud Chavaudra" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
                         <div>
                             <h3 class="club-h3" style="margin: 0;">Renaud <span>Chavaudra</span></h3>
                             <p class="coach-role">Coach Boxe Pieds-Poings</p>
@@ -848,12 +902,37 @@
                 </div>
 
                 <!-- Vignette cliquable vers la vidéo YouTube -->
-                <a href="https://youtu.be/WVkIJDsZrs4" target="_blank" class="coach-video" aria-label="Voir la vidéo de présentation du coach Renaud Chavaudra sur YouTube">
-                    <img src="https://img.youtube.com/vi/WVkIJDsZrs4/maxresdefault.jpg" alt="">
+                <a href="https://youtu.be/WVkIJDsZrs4" target="_blank" rel="noopener" class="coach-video" aria-label="Voir la vidéo de présentation du coach Renaud Chavaudra sur YouTube">
+                    <img src="https://img.youtube.com/vi/WVkIJDsZrs4/maxresdefault.jpg" alt="Présentation vidéo du coach Renaud Chavaudra" width="1280" height="720" loading="lazy" decoding="async">
                     <span class="coach-play">
                         <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
                     </span>
                 </a>
+            </div>
+
+            <div class="grid-2 coach-card" style="margin-top: 2rem;">
+                <div class="coach-body">
+                    <div class="coach-head">
+                        <img src="photo_salle/photo_coach_zouhir.webp" alt="Coach Zouhir Boumenir" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
+                        <div>
+                            <h3 class="club-h3" style="margin: 0;">Zouhir <span>Boumenir</span></h3>
+                            <p class="coach-role">Grappling &amp; Jiu-Jitsu brésilien</p>
+                        </div>
+                    </div>
+                    <p class="coach-text">
+                        Zouhir pratique les sports de combat depuis 2006 et fait partie des pionniers de la discipline dans la région. Spécialisé dans le travail au sol, il est ceinture noire de jiu-jitsu brésilien.
+                    </p>
+                    <p class="coach-text">
+                        Il enseigne dans un cadre sécurisant et progressif — technique utile, respect des partenaires, intensité adaptée à chaque niveau, du débutant au confirmé.
+                    </p>
+                    <p class="coach-place">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Toulouse États-Unis · Grappling et jiu-jitsu brésilien
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <a href="https://boxingcenter.fr/coachs-2/coach-zouhir/" target="_blank" rel="noopener" class="btn btn-secondary">Fiche officielle</a>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -865,7 +944,9 @@
         <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
-        <img id="lightboxImg" src="" alt="">
+        <!-- src et alt sont renseignés à l'ouverture : un src vide déclenche une
+             requête inutile vers l'URL de la page dans certains navigateurs. -->
+        <img id="lightboxImg" alt="">
     </div>
 
     <!-- Footer -->
@@ -873,7 +954,10 @@
         <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
             <!-- Colonne 1 : Logo & Infos -->
             <div class="footer-about">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" style="margin-bottom: 1.5rem;">
+                <div class="footer-brand">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
+                </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
                     <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
                     <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:0562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
@@ -886,6 +970,7 @@
                 <h3 class="footer-title">Plannings & Horaires</h3>
                 <ul class="footer-links">
                     <li><a href="planning.html" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="nos-clubs.html">Nos clubs</a></li>
                 </ul>
             </div>
 
@@ -894,17 +979,12 @@
                 <h3 class="footer-title">Boxing Center</h3>
                 <ul class="footer-links" style="margin-bottom: 2rem;">
                     <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="abonnements.html">Abonnements</a></li>
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
                 </ul>
                 <div class="social-links">
                     <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                     </a>
                 </div>
             </div>
@@ -917,11 +997,12 @@
 
     <!-- Barre d'action fixe (mobile et tablette) -->
     <div class="mobile-cta-bar">
-        <a href="tel:+33562244682" class="btn btn-secondary">Appeler</a>
-        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" rel="noopener" class="btn btn-primary">Séance d'essai</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
     </div>
 
     <!-- Scripts -->
+    <script src="js/offers.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
