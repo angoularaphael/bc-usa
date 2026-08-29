@@ -17,17 +17,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Boxing Center Toulouse États-Unis : 1 200 m², 3 espaces, boxe, grappling, fitness et accès libre. 388 avenue des États-Unis, Toulouse. Séance d'essai 10 €.">
     <title>Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat</title>
-    <link rel="canonical" href="./">
-    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    <link rel="canonical" href="https://clubmma.fr/">
+    <link rel="sitemap" type="application/xml" href="https://clubmma.fr/sitemap.xml">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="./">
+    <meta property="og:url" content="https://clubmma.fr/">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
     <meta property="og:title" content="Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat">
     <meta property="og:description" content="La plus grande salle de sports de combat de France : 1 200 m², 3 espaces de 400 m², avenue des États-Unis à Toulouse. Séance d'essai 10 €.">
-    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image" content="https://clubmma.fr/photo_salle/salle_cage_ring.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="891">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Boxing Center Toulouse États-Unis | Salle de boxe &amp; sports de combat">
     <meta name="twitter:description" content="La plus grande salle de sports de combat de France : 1 200 m², 3 espaces de 400 m², avenue des États-Unis à Toulouse. Séance d'essai 10 €.">
-    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta name="twitter:image" content="https://clubmma.fr/photo_salle/salle_cage_ring.jpg">
     <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,18 +49,21 @@
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "#website",
+          "@id": "https://clubmma.fr/#website",
+          "url": "https://clubmma.fr/",
           "name": "Boxing Center Toulouse États-Unis",
           "inLanguage": "fr-FR",
-          "publisher": { "@id": "#club" }
+          "publisher": { "@id": "https://clubmma.fr/#club" }
         },
         {
           "@type": "SportsActivityLocation",
-          "@id": "#club",
+          "@id": "https://clubmma.fr/#club",
           "name": "Boxing Center Toulouse États-Unis",
+          "url": "https://clubmma.fr/",
+          "knowsLanguage": ["fr-FR", "en"],
           "description": "La plus grande salle de sports de combat de France. 1 200 m² d'entraînement répartis en 3 espaces de 400 m² : striking et travail au sol, boxe, préparation physique.",
-          "image": "photo_salle/salle_cage_ring.jpg",
-          "logo": "logo/logo_transparent_v2.png",
+          "image": "https://clubmma.fr/photo_salle/salle_cage_ring.jpg",
+          "logo": "https://clubmma.fr/logo/logo_transparent_v2.png",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "388 Avenue des États-Unis",
@@ -78,7 +81,8 @@
           "email": "boxingcenter31@gmail.com",
           "priceRange": "€",
           "hasMap": "https://www.google.com/maps?q=388+Avenue+des+États-Unis,+31200+Toulouse",
-          "sameAs": ["https://www.facebook.com/BoxingCenterToulouse/", "https://boxingcenter.fr/salle-de-sport-toulouse/boxing-center-salle-de-toulouse-etats-unis/"],
+          "sameAs": ["https://www.facebook.com/BoxingCenterToulouse/", "https://www.instagram.com/boxingcentertoulouse/", "https://boxingcenter.fr/", "https://boutique.boxingcenter.fr/"],
+          "parentOrganization": { "@type": "Organization", "name": "Boxing Center", "url": "https://boxingcenter.fr/" },
           "areaServed": { "@type": "City", "name": "Toulouse" },
           "sport": ["Boxe anglaise", "Boxe pieds-poings", "Full Contact", "MMA", "Grappling", "Jiu-Jitsu brésilien", "Cross Training", "Hyrox"],
           "openingHoursSpecification": {

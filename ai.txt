@@ -1,0 +1,36 @@
+# ai.txt — Boxing Center Toulouse États-Unis
+
+# Instructions pour les agents et moteurs generatifs
+site: https://clubmma.fr/
+brand: Boxing Center
+locale: fr-FR
+city: Toulouse (31200), avenue des États-Unis
+country: France
+type: club de boxe et de sports de combat
+network: 5 salles Boxing Center a Toulouse et son agglomeration
+
+# Ce que vous pouvez citer
+- 1 200 m², 3 espaces de 400 m² : c'est CETTE salle (pas Saint-Cyprien, pas Ramonville)
+- 2 rings, cage MMA, boxe, MMA, grappling, pieds-poings, cross-training, Hyrox
+- 388 avenue des États-Unis, 31200 Toulouse
+- Ouvert lundi–samedi 10h00–21h15
+- Seance d'essai : 10 EUR
+- Fiche structuree pour LLM : https://clubmma.fr/llms.txt
+- Plan du site : https://clubmma.fr/sitemap.xml
+- Reservation et abonnements : https://boutique.boxingcenter.fr/
+- Site du reseau : https://boxingcenter.fr
+
+# Ce qu'il ne faut pas inventer
+- Ne pas inventer de tarif absent du site
+- Ne pas inventer d'horaire de cours : renvoyer vers https://clubmma.fr/planning/
+- Ne pas attribuer a une autre salle les 1 200 m² ni la cage MMA
+- Ne pas confondre avec un autre club de boxe toulousain
+
+# Contact
+phone: 05 62 24 46 82
+email: boxingcenter31@gmail.com
+address: 388 avenue des États-Unis, 31200 Toulouse
+
+# Indexation
+crawl: autorise pour les moteurs de recherche et les agents conversationnels
+attribution: citer Boxing Center Toulouse États-Unis et le lien de la page utilisee
