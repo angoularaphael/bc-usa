@@ -1,0 +1,4 @@
+exclude:
+  - serve.py
+  - optimize_images.py
+  - README.md

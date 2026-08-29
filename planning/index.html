@@ -1,13 +1,984 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="refresh" content="0; url=../">
-    <title>Boxing Center</title>
-    <link rel="canonical" href="../">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var root = '/';
+        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
+            if (p.indexOf(prefix) === 0) root = prefix;
+        });
+        var base = document.createElement('base');
+        base.href = location.origin + root;
+        document.head.appendChild(base);
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness au Boxing Center Toulouse États-Unis. Un planning par espace de pratique.">
+    <title>Plannings & Horaires | Boxing Center Toulouse États-Unis</title>
+    <link rel="canonical" href="planning/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#030814">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="planning/">
+    <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
+    <meta property="og:title" content="Plannings & Horaires | Boxing Center Toulouse États-Unis">
+    <meta property="og:description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness à Toulouse.">
+    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="891">
+    <meta property="og:image:alt" content="Cage MMA et ring au Boxing Center Toulouse États-Unis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plannings & Horaires | Boxing Center Toulouse États-Unis">
+    <meta name="twitter:description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness à Toulouse.">
+    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <!-- Style CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-banner {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Halo bronze animé derrière le titre */
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            width: 40rem;
+            height: 40rem;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, var(--bronze-glow), transparent 65%);
+            pointer-events: none;
+            animation: bannerHalo 9s ease-in-out infinite;
+        }
+        .page-banner .container { position: relative; z-index: 1; }
+
+        /* --- Entrées au chargement --- */
+        .anim-up {
+            opacity: 0;
+            animation: bannerUp 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+        .anim-up-1 { animation-delay: 0.15s; }
+        .anim-up-2 { animation-delay: 0.3s; }
+        .anim-up-3 { animation-delay: 0.45s; }
+
+        /* --- Onglets (zones de pratique) --- */
+        .planning-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        /* Pastille bronze qui glisse derrière l'onglet actif */
+        .planning-tab-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--bronze-light), var(--bronze-dark));
+            box-shadow: 0 8px 22px rgba(197, 155, 108, 0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.45s cubic-bezier(0.68, -0.4, 0.28, 1.4),
+                        width 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        height 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        opacity 0.3s ease;
+        }
+        .planning-tab {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 2px solid var(--border-color);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .planning-tab svg { flex-shrink: 0; transition: transform 0.4s ease; }
+        .planning-tab:hover {
+            color: var(--white);
+            border-color: var(--bronze);
+            transform: translateY(-3px);
+        }
+        .planning-tab:hover svg { transform: rotate(-12deg) scale(1.1); }
+        .planning-tab:focus-visible {
+            outline: 2px solid var(--bronze-light);
+            outline-offset: 3px;
+        }
+        .planning-tab[aria-selected="true"] {
+            color: var(--bg-primary);
+            border-color: transparent;
+            font-weight: 700;
+        }
+        .planning-tab[aria-selected="true"] svg { transform: none; }
+
+        /* --- Scène : flèches + panneaux --- */
+        .planning-stage {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .planning-nav {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--bronze);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .planning-nav:hover {
+            background: var(--bronze);
+            border-color: var(--bronze);
+            color: var(--bg-primary);
+            transform: scale(1.12);
+            box-shadow: 0 8px 20px rgba(197, 155, 108, 0.3);
+        }
+        .planning-nav:focus-visible {
+            outline: 2px solid var(--bronze-light);
+            outline-offset: 3px;
+        }
+
+        .planning-viewport {
+            flex: 1;
+            min-width: 0;
+            display: grid; /* les 3 panneaux sont empilés dans la même cellule -> crossfade sans saut de hauteur */
+        }
+        .planning-panel {
+            grid-area: 1 / 1;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            padding: 2.5rem;
+        }
+        /* En-tete : titre a gauche, legende a droite. Le visuel occupe ensuite
+           toute la largeur du panneau : ces plannings font 1200px et sont
+           denses, les afficher dans une colonne de 445px les rendait illisibles. */
+        .planning-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.25rem 2rem;
+            margin-bottom: 1.75rem;
+        }
+        .planning-head-text { flex: 1 1 260px; }
+        .planning-panel.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition: opacity 0.35s ease, visibility 0s linear 0s;
+            animation: panelIn 0.55s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+        }
+
+        /* --- Visuel du planning (cliquable pour agrandir) --- */
+        .planning-figure {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            background: #110f20;
+            cursor: zoom-in;
+            transition: var(--transition-smooth);
+        }
+        .planning-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .planning-figure:hover {
+            transform: translateY(-4px);
+            border-color: var(--bronze);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--bronze-glow);
+        }
+        .planning-figure:focus-visible {
+            outline: 2px solid var(--bronze-light);
+            outline-offset: 4px;
+        }
+        /* Voile "agrandir" au survol */
+        .planning-figure-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: rgba(3, 8, 20, 0.72);
+            color: var(--bronze-light);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .planning-figure:hover .planning-figure-overlay,
+        .planning-figure:focus-visible .planning-figure-overlay { opacity: 1; }
+
+        /* --- Colonne d'infos --- */
+        .planning-title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 0.4rem;
+        }
+        /* Dégradé bronze sur les mots accentués, comme .section-title span */
+        .page-banner h1 span,
+        .planning-title span {
+            color: var(--bronze);
+            background: linear-gradient(135deg, var(--white) 30%, var(--bronze) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .planning-subtitle {
+            color: var(--bronze-light);
+            font-size: 1rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+        }
+        .legend-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+        .legend-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin: 0;
+        }
+        .legend-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.9rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+        }
+        .legend-chip:hover {
+            border-color: var(--bronze);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        .legend-swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+        /* Apparition en cascade des pastilles quand le panneau devient actif */
+        .planning-panel.is-active .legend-chip {
+            animation: chipIn 0.45s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+        }
+        .planning-panel.is-active .legend-chip:nth-child(1) { animation-delay: 0.18s; }
+        .planning-panel.is-active .legend-chip:nth-child(2) { animation-delay: 0.26s; }
+        .planning-panel.is-active .legend-chip:nth-child(3) { animation-delay: 0.34s; }
+        .planning-panel.is-active .legend-chip:nth-child(4) { animation-delay: 0.42s; }
+        .planning-panel.is-active .legend-chip:nth-child(5) { animation-delay: 0.50s; }
+        .planning-panel.is-active .legend-chip:nth-child(6) { animation-delay: 0.58s; }
+
+        /* Mention + bouton de telechargement, sous le visuel */
+        .planning-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .planning-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .planning-dl {
+            gap: 0.55rem;
+            font-size: 0.95rem;
+            /* Rembourrage suffisant pour dépasser 48px de haut sans dépendre du
+               min-height global (cible tactile WCAG 2.5.5). */
+            padding: 0.85rem 1.5rem;
+        }
+        .planning-pdf {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+        .planning-pdf .btn { gap: 0.55rem; }
+
+        @media (max-width: 600px) {
+            .planning-actions { flex-direction: column; align-items: stretch; }
+            .planning-dl { justify-content: center; }
+        }
+        .planning-hint svg { flex-shrink: 0; color: var(--bronze); }
+
+        /* --- Points de pagination --- */
+        .planning-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 2.5rem;
+        }
+        .planning-dot {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.18);
+            cursor: pointer;
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s ease;
+        }
+        .planning-dot:hover { background: var(--bronze-dark); }
+        .planning-dot[aria-current="true"] {
+            width: 34px;
+            background: var(--bronze);
+        }
+        .planning-dot:focus-visible {
+            outline: 2px solid var(--bronze-light);
+            outline-offset: 3px;
+        }
+
+        /* --- Visionneuse plein écran --- */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(3, 8, 20, 0.93);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow: auto;
+        }
+        .lightbox.is-open {
+            display: flex;
+            animation: fadeIn 0.3s ease both;
+        }
+        .lightbox img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+            cursor: zoom-in;
+            animation: lightboxIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .lightbox.is-zoomed { align-items: flex-start; justify-content: flex-start; }
+        .lightbox.is-zoomed img {
+            max-width: none;
+            flex-shrink: 0; /* sinon le conteneur flex ramène l'image à sa largeur intrinsèque */
+            width: 1600px;  /* ~1,33x la taille native du JPEG (1200px) */
+            cursor: zoom-out;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .lightbox-close:hover {
+            background: var(--bronze);
+            color: var(--bg-primary);
+            transform: rotate(90deg);
+        }
+
+        /* --- Keyframes --- */
+        @keyframes bannerUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bannerHalo {
+            0%, 100% { opacity: 0.55; transform: translateX(-50%) scale(1); }
+            50%      { opacity: 1;    transform: translateX(-50%) scale(1.15); }
+        }
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateX(var(--enter-x, 34px)) scale(0.985); }
+            to   { opacity: 1; transform: none; }
+        }
+        @keyframes chipIn {
+            from { opacity: 0; transform: translateX(-14px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes lightboxIn {
+            from { opacity: 0; transform: scale(0.94); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .planning-panel {
+                padding: 1.75rem;
+            }
+            .planning-nav { display: none; } /* remplacé par le swipe et les onglets */
+        }
+        @media (max-width: 768px) {
+            .planning-tabs { gap: 0.75rem; }
+            .planning-tab {
+                width: 100%;
+                justify-content: center;
+            }
+            .planning-panel { padding: 1.25rem; }
+            .legend-list { gap: 0.45rem; }
+        }
+
+        /* --- Respect de la préférence système "moins d'animations" --- */
+        @media (prefers-reduced-motion: reduce) {
+            .anim-up,
+            .planning-panel.is-active,
+            .planning-panel.is-active .legend-chip,
+            .lightbox.is-open,
+            .lightbox img,
+            .page-banner::before {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .planning-tab-indicator,
+            .planning-figure,
+            .legend-chip,
+            .planning-nav,
+            .planning-dot,
+            .lightbox img {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"./"},{"@type":"ListItem","position":2,"name":"Plannings","item":"planning/"}]}
+    </script>
+    <script src="js/seo.js"></script>
 </head>
 <body>
-    <p><a href="../">Retour à l’accueil</a></p>
+
+    <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="./" class="logo-link">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            </a>
+
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item active"><a href="planning/" class="nav-link" aria-current="page">Plannings</a></li>
+                <li class="nav-item"><a href="clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item"><a href="contact/" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" class="btn btn-primary double-outline-element">Faire un essai</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenu">
+
+    <section class="page-hero">
+        <div class="page-hero-media">
+            <picture>
+                <source srcset="photo_salle/espace_boxe.webp" type="image/webp">
+                <img src="photo_salle/espace_boxe.jpg" alt="Salle de boxe du Boxing Center Toulouse États-Unis" width="1600" height="1200" fetchpriority="high" decoding="async">
+            </picture>
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="eyebrow">Saison 2026-2027</span>
+            <p class="script-energy type-kicker">À votre rythme</p>
+            <h1>Nos <span>plannings</span></h1>
+            <p>Les horaires de tous les cours, par zone de pratique. Trois espaces de 400 m², une seule adresse — et aucune réservation à faire.</p>
+            <ul class="page-hero-facts">
+                <li>3 plannings</li>
+                <li>Sans réservation</li>
+                <li>Accès libre 10h–21h15</li>
+            </ul>
+            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Réserver un essai — 10 €</a>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--bg-primary);">
+        <div class="container">
+
+            <!-- Onglets : une zone de pratique par planning -->
+            <div class="planning-tabs" role="tablist" aria-label="Zones de pratique">
+                <span class="planning-tab-indicator" aria-hidden="true"></span>
+
+                <button type="button" class="planning-tab" role="tab" id="tab-boxe"
+                        aria-controls="boxe" aria-selected="true" data-index="0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    Boxe
+                </button>
+
+                <button type="button" class="planning-tab" role="tab" id="tab-fitness"
+                        aria-controls="fitness" aria-selected="false" data-index="1" tabindex="-1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    Fitness
+                </button>
+
+                <button type="button" class="planning-tab" role="tab" id="tab-mma"
+                        aria-controls="mma" aria-selected="false" data-index="2" tabindex="-1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    MMA &amp; Sol
+                </button>
+            </div>
+
+            <!-- Scène : flèches de navigation + panneaux -->
+            <div class="planning-stage" id="planningStage">
+                <button type="button" class="planning-nav" id="planningPrev" aria-label="Planning précédent">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+
+                <div class="planning-viewport">
+
+                    <!-- Panneau 1 : Boxe -->
+                    <div class="planning-panel is-active" role="tabpanel" id="boxe" aria-labelledby="tab-boxe">
+                        <div class="planning-head">
+                            <div class="planning-head-text">
+                                <h2 class="planning-title">Salle <span>Boxe</span></h2>
+                                <p class="planning-subtitle">Boxe anglaise &amp; pieds-poings</p>
+                            </div>
+                            <ul class="legend-list">
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#3685ff"></span> Boxe Anglaise</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#fc6d0d"></span> Pieds-Poings / Kick</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#04abef"></span> École / Jeunes (3/6, 7/11, 12/16 ans)</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#110f20"></span> Accès libre</li>
+                            </ul>
+                        </div>
+
+                        <!-- Chargement immediat (pas de loading="lazy") : les 3 plannings sont
+                             empiles dans la meme cellule de grille, les inactifs en visibility:hidden.
+                             Une image lazy dans un conteneur masque peut ne jamais se charger, et le
+                             visiteur verrait un cadre vide en changeant d'onglet. -->
+                        <button type="button" class="planning-figure" data-src="horaires/planning-boxe.jpg" data-alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
+                            <img src="horaires/planning-boxe.jpg" width="1600" height="1131" decoding="async" alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
+                            <span class="planning-figure-overlay">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Agrandir
+                            </span>
+                        </button>
+
+                        <div class="planning-actions">
+                            <p class="planning-hint">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                Cliquez sur le planning pour l'agrandir
+                            </p>
+                            <a class="btn btn-secondary planning-dl" href="horaires/planning-boxe.jpg" download="planning-boxe-2026-2027.jpg">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Panneau 2 : Fitness -->
+                    <div class="planning-panel" role="tabpanel" id="fitness" aria-labelledby="tab-fitness">
+                        <div class="planning-head">
+                            <div class="planning-head-text">
+                                <h2 class="planning-title">Boxing <span>Fitness</span></h2>
+                                <p class="planning-subtitle">Préparation physique &amp; cours collectifs</p>
+                            </div>
+                            <ul class="legend-list">
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#aa18bb"></span> Hyrox</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#0a7d32"></span> Boxing HIIT</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#98e527"></span> Cross-Training</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#f53c99"></span> Lady Punch</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#110f20"></span> Accès libre</li>
+                            </ul>
+                        </div>
+
+                        <button type="button" class="planning-figure" data-src="horaires/planning-fitness.jpg" data-alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
+                            <img src="horaires/planning-fitness.jpg" width="1600" height="1131" loading="lazy" decoding="async" alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
+                            <span class="planning-figure-overlay">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Agrandir
+                            </span>
+                        </button>
+
+                        <div class="planning-actions">
+                            <p class="planning-hint">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                Cliquez sur le planning pour l'agrandir
+                            </p>
+                            <a class="btn btn-secondary planning-dl" href="horaires/planning-fitness.jpg" download="planning-fitness-2026-2027.jpg">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Panneau 3 : MMA & Sol -->
+                    <div class="planning-panel" role="tabpanel" id="mma" aria-labelledby="tab-mma">
+                        <div class="planning-head">
+                            <div class="planning-head-text">
+                                <h2 class="planning-title">Salle <span>MMA</span></h2>
+                                <p class="planning-subtitle">Grappling &amp; travail au sol</p>
+                            </div>
+                            <ul class="legend-list">
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#8c53ff"></span> MMA</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#089489"></span> Grappling</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#ebc814"></span> Jiu-Jitsu Brésilien</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#0ba5ef"></span> École / Jeunes (10/16 ans)</li>
+                                <li class="legend-chip"><span class="legend-swatch" style="background:#110f20"></span> Accès libre</li>
+                            </ul>
+                        </div>
+
+                        <button type="button" class="planning-figure" data-src="horaires/planning-mma.jpg" data-alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
+                            <img src="horaires/planning-mma.jpg" width="1600" height="808" loading="lazy" decoding="async" alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
+                            <span class="planning-figure-overlay">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                Agrandir
+                            </span>
+                        </button>
+
+                        <div class="planning-actions">
+                            <p class="planning-hint">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                Cliquez sur le planning pour l'agrandir
+                            </p>
+                            <a class="btn btn-secondary planning-dl" href="horaires/planning-mma.jpg" download="planning-mma-2026-2027.jpg">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button" class="planning-nav" id="planningNext" aria-label="Planning suivant">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+
+            <!-- Points de pagination -->
+            <div class="planning-dots" id="planningDots">
+                <button type="button" class="planning-dot" data-index="0" aria-current="true" aria-label="Voir le planning Boxe"></button>
+                <button type="button" class="planning-dot" data-index="1" aria-label="Voir le planning Fitness"></button>
+                <button type="button" class="planning-dot" data-index="2" aria-label="Voir le planning MMA et sol"></button>
+            </div>
+
+            <!-- Version imprimable des 3 plannings -->
+            <p class="planning-pdf">
+                <a class="btn btn-secondary" href="horaires/plannings-boxing-center-etats-unis-2026-2027.pdf" download="plannings-boxing-center-etats-unis-2026-2027.pdf">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger les 3 plannings (PDF, 3 pages)
+                </a>
+            </p>
+
+            <div style="text-align: center; margin-top: 5rem;">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" class="btn btn-primary double-outline-element">Réserver ma séance d'essai</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Visionneuse plein écran -->
+    <div class="lightbox" id="planningLightbox" role="dialog" aria-modal="true" aria-label="Planning agrandi">
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <!-- src et alt sont renseignés à l'ouverture : un src vide déclenche une
+             requête inutile vers l'URL de la page dans certains navigateurs. -->
+        <img id="lightboxImg" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Colonne 1 : Logo & Infos -->
+            <div class="footer-about">
+                <div class="footer-brand">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
+                </div>
+                <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:0562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 2 : Horaires -->
+            <div>
+                <h3 class="footer-title">Plannings & Horaires</h3>
+                <ul class="footer-links">
+                    <li><a href="planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="nos-clubs/">Nos clubs</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
+            <div>
+                <h3 class="footer-title">Boxing Center</h3>
+                <ul class="footer-links" style="margin-bottom: 2rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Barre d'action fixe (mobile et tablette) -->
+    <div class="mobile-cta-bar">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/offers.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = Array.from(document.querySelectorAll('.planning-tab'));
+            const panels = Array.from(document.querySelectorAll('.planning-panel'));
+            const dots = Array.from(document.querySelectorAll('.planning-dot'));
+            const indicator = document.querySelector('.planning-tab-indicator');
+            const stage = document.getElementById('planningStage');
+            const prevBtn = document.getElementById('planningPrev');
+            const nextBtn = document.getElementById('planningNext');
+
+            if (!tabs.length || !panels.length) return;
+
+            let current = 0;
+
+            /* Liens profonds (planning/#fitness). Les panneaux inactifs sont
+               masqués : le navigateur ne peut pas atteindre l'ancre seul, on
+               sélectionne l'onglet puis on amène la vue sur les onglets. */
+            const hashMap = { boxe: 0, fitness: 1, mma: 2, sol: 2 };
+            const hashKey = (location.hash || '').replace('#', '').toLowerCase();
+            if (hashKey in hashMap) {
+                current = hashMap[hashKey];
+                const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                requestAnimationFrame(() => {
+                    document.querySelector('.planning-tabs').scrollIntoView({
+                        behavior: reduce ? 'auto' : 'smooth',
+                        block: 'center'
+                    });
+                });
+            }
+
+            panels.forEach((p, i) => p.classList.toggle('is-active', i === current));
+            tabs.forEach((t, i) => {
+                const on = i === current;
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                t.setAttribute('tabindex', on ? '0' : '-1');
+            });
+            dots.forEach((d, i) => {
+                if (i === current) d.setAttribute('aria-current', 'true');
+                else d.removeAttribute('aria-current');
+            });
+
+            // Positionne la pastille bronze derrière l'onglet actif
+            const moveIndicator = () => {
+                const tab = tabs[current];
+                indicator.style.width = tab.offsetWidth + 'px';
+                indicator.style.height = tab.offsetHeight + 'px';
+                indicator.style.transform = `translate(${tab.offsetLeft}px, ${tab.offsetTop}px)`;
+                indicator.style.opacity = '1';
+            };
+
+            const show = (index, { focusTab = false, force = false } = {}) => {
+                const next = (index + panels.length) % panels.length;
+                if (next === current && !force) return;
+
+                // Sens de l'animation d'entrée du panneau
+                const forward = next > current || (current === panels.length - 1 && next === 0);
+                panels[next].style.setProperty('--enter-x', forward ? '34px' : '-34px');
+
+                panels[current].classList.remove('is-active');
+                panels[next].classList.add('is-active');
+
+                tabs[current].setAttribute('aria-selected', 'false');
+                tabs[current].setAttribute('tabindex', '-1');
+                tabs[next].setAttribute('aria-selected', 'true');
+                tabs[next].setAttribute('tabindex', '0');
+
+                dots[current].removeAttribute('aria-current');
+                dots[next].setAttribute('aria-current', 'true');
+
+                current = next;
+                moveIndicator();
+                if (focusTab) tabs[current].focus();
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => show(Number(tab.dataset.index)));
+            });
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => show(Number(dot.dataset.index)));
+            });
+            prevBtn.addEventListener('click', () => show(current - 1));
+            nextBtn.addEventListener('click', () => show(current + 1));
+
+            // Flèches clavier, uniquement quand le focus est dans les onglets ou la scène
+            const onArrows = (e) => {
+                if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1, { focusTab: e.target.classList.contains('planning-tab') }); }
+                else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1, { focusTab: e.target.classList.contains('planning-tab') }); }
+            };
+            document.querySelector('.planning-tabs').addEventListener('keydown', onArrows);
+            stage.addEventListener('keydown', onArrows);
+
+            // Balayage tactile
+            let touchX = 0, touchY = 0;
+            stage.addEventListener('touchstart', (e) => {
+                touchX = e.changedTouches[0].clientX;
+                touchY = e.changedTouches[0].clientY;
+            }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].clientX - touchX;
+                const dy = e.changedTouches[0].clientY - touchY;
+                // On ignore les gestes majoritairement verticaux (scroll)
+                if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+                    show(dx < 0 ? current + 1 : current - 1);
+                }
+            }, { passive: true });
+
+            // Repositionnement de la pastille au resize et une fois les polices chargées
+            window.addEventListener('resize', moveIndicator);
+            requestAnimationFrame(moveIndicator);
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(moveIndicator);
+            }
+            window.addEventListener('hashchange', () => {
+                const k = (location.hash || '').replace('#', '').toLowerCase();
+                if (k in hashMap) show(hashMap[k], { force: true });
+            });
+
+            /* --- Visionneuse plein écran --- */
+            const lightbox = document.getElementById('planningLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+            let lastTrigger = null;
+
+            const openLightbox = (src, alt, trigger) => {
+                lightboxImg.src = src;
+                lightboxImg.alt = alt;
+                lightbox.classList.add('is-open');
+                lightbox.classList.remove('is-zoomed');
+                document.body.style.overflow = 'hidden';
+                lastTrigger = trigger;
+                lightboxClose.focus();
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('is-open', 'is-zoomed');
+                document.body.style.overflow = '';
+                if (lastTrigger) lastTrigger.focus();
+            };
+
+            document.querySelectorAll('.planning-figure').forEach(fig => {
+                fig.addEventListener('click', () => {
+                    openLightbox(fig.dataset.src, fig.dataset.alt, fig);
+                });
+            });
+
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightbox.classList.toggle('is-zoomed');
+            });
+            lightbox.addEventListener('click', closeLightbox); // clic sur le fond
+            lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+            });
+
+            /* --- Révélation au scroll (réutilise .reveal de style.css) --- */
+            const toReveal = [stage, document.getElementById('planningDots')];
+            if ('IntersectionObserver' in window) {
+                toReveal.forEach(el => el && el.classList.add('reveal'));
+                const obs = new IntersectionObserver((entries, o) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            o.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                requestAnimationFrame(() => toReveal.forEach(el => el && obs.observe(el)));
+            }
+        });
+    </script>
 </body>
 </html>

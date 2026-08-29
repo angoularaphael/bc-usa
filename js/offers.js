@@ -52,10 +52,16 @@
         }, reduceMotion ? 9000 : ROTATE_MS);
     }
 
-    function pageFile() {
-        const raw = (window.location.pathname.split('/').pop() || '').toLowerCase();
-        if (!raw) return 'index.html';
-        return raw.endsWith('.html') ? raw : `${raw}.html`;
+    function pageSlug() {
+        let path = window.location.pathname;
+        ['/boxing_center_etats_unis', '/boxing_center', '/bc-usa'].forEach((prefix) => {
+            if (path === prefix || path.indexOf(prefix + '/') === 0) {
+                path = path.slice(prefix.length) || '/';
+            }
+        });
+        path = path.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+        if (path === '/' || path === '/index.html') return 'index';
+        return path.split('/').pop().replace(/\.html$/, '');
     }
 
     function isMobile() {
@@ -120,18 +126,18 @@
     }
 
     function injectStrips() {
-        const file = pageFile();
-        if (file === 'abonnements.html' || document.body.classList.contains('page-abonnements')) return;
+        const file = pageSlug();
+        if (file === 'abonnements' || document.body.classList.contains('page-abonnements')) return;
 
         const hero = document.querySelector('.hero, .page-hero');
         injectAfter(hero, 'hero');
 
-        if (file === 'disciplines.html') {
+        if (file === 'disciplines') {
             const rows = document.querySelectorAll('.discipline-row');
             if (rows[1]) injectAfter(rows[1], 'mid');
         }
 
-        if (file === 'contact.html') return;
+        if (file === 'contact') return;
 
         const immersive = document.querySelector('.immersive');
         if (immersive) {
@@ -140,7 +146,7 @@
         }
 
         const lastCta = document.querySelector('main > section.section-bg-alt:last-of-type');
-        if (lastCta && file === 'disciplines.html') {
+        if (lastCta && file === 'disciplines') {
             injectBefore(lastCta, 'footer');
             return;
         }

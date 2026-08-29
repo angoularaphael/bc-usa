@@ -1,3 +1,25 @@
+(function fixHashLinksForBase() {
+    if (!document.querySelector('base')) return;
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        const hash = anchor.getAttribute('href');
+        if (hash && hash.length > 1) {
+            anchor.setAttribute('href', location.pathname + hash);
+        }
+    });
+})();
+
+function sitePageSlug() {
+    let path = location.pathname;
+    ['/boxing_center_etats_unis', '/boxing_center', '/bc-usa'].forEach((prefix) => {
+        if (path === prefix || path.indexOf(prefix + '/') === 0) {
+            path = path.slice(prefix.length) || '/';
+        }
+    });
+    path = path.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+    if (path === '/' || path === '/index.html') return 'index';
+    return path.split('/').pop().replace(/\.html$/, '');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const hamburger = document.querySelector('.hamburger');
@@ -43,13 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const slug = sitePageSlug();
     document.querySelectorAll('.nav-item').forEach((item) => {
         const link = item.querySelector('a');
         if (!link) return;
         const href = (link.getAttribute('href') || '').split('#')[0];
         if (!href || href.startsWith('http')) return;
-        const isActive = href === currentFile;
+        const target = href.replace(/\/+$/, '').replace(/^\.\//, '') || 'index';
+        const isActive = target === slug || (slug === 'index' && (href === './' || href === '/'));
         item.classList.toggle('active', isActive);
         if (isActive) {
             link.setAttribute('aria-current', 'page');

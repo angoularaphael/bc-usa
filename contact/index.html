@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var root = '/';
+        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
+            if (p.indexOf(prefix) === 0) root = prefix;
+        });
+        var base = document.createElement('base');
+        base.href = location.origin + root;
+        document.head.appendChild(base);
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boxing Center Toulouse États-Unis : 388 Avenue des États-Unis, 31200 Toulouse. Téléphone 05 62 24 46 82, itinéraire et séance d'essai 10 €.">
+    <title>Contact & Accès | Boxing Center Toulouse États-Unis</title>
+    <link rel="canonical" href="contact/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#030814">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="contact/">
+    <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
+    <meta property="og:title" content="Contact & Accès | Boxing Center Toulouse États-Unis">
+    <meta property="og:description" content="388 avenue des États-Unis, 31200 Toulouse. Téléphone, email et plan d'accès.">
+    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="891">
+    <meta property="og:image:alt" content="Cage MMA et ring au Boxing Center Toulouse États-Unis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact & Accès | Boxing Center Toulouse États-Unis">
+    <meta name="twitter:description" content="388 avenue des États-Unis, 31200 Toulouse. Téléphone, email et plan d'accès.">
+    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <!-- Style CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-banner {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Coordonnées à gauche, plan d'accès à droite. */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        /* Bloc d'action : les 3 façons de joindre le club, en haut de page. */
+        .contact-direct {
+            padding: 1.75rem;
+            margin-bottom: 2.5rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--bronze);
+            border-radius: var(--border-radius-md);
+        }
+        .contact-direct p { margin: 0 0 1.25rem; }
+        .contact-direct strong { color: var(--white); }
+        .contact-direct-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        /* .contact-info-list / -item / -icon sont déjà définis dans style.css
+           (icônes encadrées 45x45) : on ne redéfinit ici que les compléments.
+           Le titre passe par une classe et non par h4, la hiérarchie de la page
+           imposant un h3 à ce niveau. */
+        .contact-info-title {
+            margin: 0 0 0.3rem;
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        /* Titre de colonne : plus bas que les h2 de section, les deux colonnes
+           étant déjà introduites par le hero de la page. */
+        .contact-col-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info-details p { margin: 0; }
+        .contact-info-details a { color: inherit; text-decoration: none; }
+        .contact-info-details a:hover { color: var(--bronze); }
+
+        .map-wrapper {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 560px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .map-wrapper { height: 360px; }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "index.html"},
+            {"@type": "ListItem", "position": 2, "name": "Contact", "item": "contact.html"}
+          ]
+        },
+        {
+          "@type": "SportsActivityLocation",
+          "name": "Boxing Center Toulouse États-Unis",
+          "telephone": "+33562244682",
+          "email": "boxingcenter31@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "388 Avenue des États-Unis",
+            "postalCode": "31200",
+            "addressLocality": "Toulouse",
+            "addressCountry": "FR"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 43.622285, "longitude": 1.423984 },
+          "hasMap": "https://www.google.com/maps?q=388+Avenue+des+États-Unis,+31200+Toulouse"
+        }
+      ]
+    }
+    </script>
+    <script src="js/seo.js"></script>
+</head>
+<body>
+
+    <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="./" class="logo-link">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            </a>
+            
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="planning/" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item active"><a href="contact/" class="nav-link" aria-current="page">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" class="btn btn-primary double-outline-element">Faire un essai</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenu">
+
+    <!-- Page Banner -->
+    <section class="page-hero">
+        <div class="page-hero-media">
+            <picture>
+                <source srcset="photo_salle/taii.webp" type="image/webp">
+                <img src="photo_salle/taii.jpg" alt="Entraînement au Boxing Center Toulouse États-Unis" width="1600" height="900" fetchpriority="high" decoding="async">
+            </picture>
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="eyebrow">Contact &amp; accès</span>
+            <h1>Nous <span class="script-soft">contacter</span></h1>
+            <p>Une question sur les cours, les tarifs ou votre première séance ? Le plus rapide reste le téléphone. Vous pouvez aussi passer nous voir au club ou nous écrire.</p>
+            <ul class="page-hero-facts">
+                <li>388 avenue des États-Unis</li>
+                <li>Sortie 33b Lalande</li>
+            </ul>
+            <div class="hero-btns">
+                <a href="tel:+33562244682" class="btn btn-primary double-outline-element">Appeler le 05 62 24 46 82</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section">
+        <div class="container contact-container">
+
+            <!-- Colonne gauche : les 3 façons de nous joindre -->
+            <div>
+                <h2 class="contact-col-title">Nos <span>Coordonnées</span></h2>
+
+                <div class="contact-direct">
+                    <p>
+                        <strong>Vous voulez essayer ?</strong><br>
+                        Séance d'essai 10 €, activité au choix. Réservation en ligne ou par téléphone.
+                    </p>
+                    <div class="contact-direct-actions">
+                        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Réserver ma séance d'essai — 10 €</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Voir l'itinéraire</a>
+                        <a href="tel:+33562244682" class="btn btn-secondary">Appeler le 05 62 24 46 82</a>
+                    </div>
+                </div>
+
+                <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                        <div class="contact-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                        <div class="contact-info-details">
+                            <h3 class="contact-info-title">Adresse</h3>
+                            <p>388 Avenue des États-Unis<br>31200 Toulouse</p>
+                        </div>
+                    </li>
+                    <li class="contact-info-item">
+                        <div class="contact-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+                        <div class="contact-info-details">
+                            <h3 class="contact-info-title">Téléphone</h3>
+                            <p><a href="tel:+33562244682">05 62 24 46 82</a><br>Lundi au jeudi, 10h–17h</p>
+                        </div>
+                    </li>
+                    <li class="contact-info-item">
+                        <div class="contact-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                        <div class="contact-info-details">
+                            <h3 class="contact-info-title">Email</h3>
+                            <p><a href="mailto:boxingcenter31@gmail.com">boxingcenter31@gmail.com</a></p>
+                        </div>
+                    </li>
+                    <li class="contact-info-item">
+                        <div class="contact-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18"></path><path d="M5 17V9l3-4h8l3 4v8"></path><circle cx="7.5" cy="17" r="1.5"></circle><circle cx="16.5" cy="17" r="1.5"></circle></svg></div>
+                        <div class="contact-info-details">
+                            <h3 class="contact-info-title">Accès</h3>
+                            <p>À proximité de la sortie de périphérique 33b « Lalande ».</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Colonne droite : plan d'accès -->
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.243501980838!2d1.4239843154964654!3d43.62228517912189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb433128fb5f%3A0xc32a4e21a243e8bb!2s388%20Av.%20des%20Etats%20Unis%2C%2031200%20Toulouse!5e0!3m2!1sfr!2sfr!4v1689100000000!5m2!1sfr!2sfr"
+                        title="Plan d'accès au Boxing Center, 388 avenue des États-Unis à Toulouse"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Colonne 1 : Logo & Infos -->
+            <div class="footer-about">
+                <div class="footer-brand">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
+                </div>
+                <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+33562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 2 : Horaires -->
+            <div>
+                <h3 class="footer-title">Plannings & Horaires</h3>
+                <ul class="footer-links">
+                    <li><a href="planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="nos-clubs/">Nos clubs</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
+            <div>
+                <h3 class="footer-title">Boxing Center</h3>
+                <ul class="footer-links" style="margin-bottom: 2rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Barre d'action fixe (mobile et tablette) -->
+    <div class="mobile-cta-bar">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/offers.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
