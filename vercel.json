@@ -1,5 +1,19 @@
 {
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.clubmma.fr" }],
+      "destination": "https://clubmma.fr/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.clubmma.fr" }],
+      "destination": "https://clubmma.fr/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
