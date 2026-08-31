@@ -1702,6 +1702,18 @@ footer {
     box-shadow: 0 0 0 3px var(--bronze-light);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* 2. Lien d'évitement : accès direct au contenu au clavier. */
 .skip-link {
     position: absolute;
@@ -3381,7 +3393,8 @@ body.page-abonnements {
 #comptant,
 #enfants,
 #comparer,
-#choix {
+#choix,
+#mma {
     scroll-margin-top: calc(11rem + env(safe-area-inset-top, 0px));
 }
 
@@ -3790,6 +3803,7 @@ body.page-abonnements {
     gap: clamp(1.5rem, 4vw, 4rem);
     align-items: center;
     margin-bottom: clamp(3rem, 7vw, 6rem);
+    scroll-margin-top: calc(11rem + env(safe-area-inset-top, 0px));
 }
 
 .discipline-row:nth-child(even) {
