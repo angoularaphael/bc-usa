@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <script>
     (function () {
-        var p = location.pathname;
-        var root = '/';
-        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
-            if (p.indexOf(prefix) === 0) root = prefix;
-        });
-        var base = document.createElement('base');
-        base.href = location.origin + root;
-        document.head.appendChild(base);
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
     })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="1 200 m² avenue des États-Unis à Toulouse : 2 rings, cage MMA, tatamis, 16 sacs de frappe et espace musculation. Visite en images et coach référent.">
     <title>Le club | Boxing Center Toulouse États-Unis — 1 200 m²</title>
-    <link rel="canonical" href="clubs/">
+    <link rel="canonical" href="./">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="clubs/">
+    <meta property="og:url" content="./">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
     <meta property="og:title" content="Le club | Boxing Center Toulouse États-Unis — 1 200 m²">
     <meta property="og:description" content="1 200 m² à Toulouse : 2 rings, cage MMA, tatamis et espace musculation. Visite en images.">
-    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image" content="../photo_salle/salle_cage_ring.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="891">
@@ -34,13 +39,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Le club | Boxing Center Toulouse États-Unis — 1 200 m²">
     <meta name="twitter:description" content="1 200 m² à Toulouse : 2 rings, cage MMA, tatamis et espace musculation. Visite en images.">
-    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
-    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <meta name="twitter:image" content="../photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="../logo/logo_transparent_v2.png">
     <!-- Style CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .page-banner {
             padding: 8rem 0 4rem;
@@ -595,11 +600,11 @@
             .coach-play::before { display: none; }
         }
     </style>
-    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <link rel="icon" type="image/png" href="../logo/logo_transparent_v2.png">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"./"},{"@type":"ListItem","position":2,"name":"Le club","item":"clubs/"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"../"},{"@type":"ListItem","position":2,"name":"Le club","item":"./"}]}
     </script>
-    <script src="js/seo.js"></script>
+    <script src="../js/seo.js"></script>
 </head>
 <body>
 
@@ -608,8 +613,8 @@
     <!-- Header / Navigation -->
     <header>
         <div class="container nav-wrapper">
-            <a href="./" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            <a href="../" class="logo-link">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
 
             <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
@@ -619,13 +624,13 @@
             </button>
 
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
-                <li class="nav-item"><a href="planning/" class="nav-link">Plannings</a></li>
-                <li class="nav-item active"><a href="clubs/" class="nav-link" aria-current="page">Le Club</a></li>
-                <li class="nav-item"><a href="nos-clubs/" class="nav-link">Nos clubs</a></li>
-                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="../" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="../disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="../planning/" class="nav-link">Plannings</a></li>
+                <li class="nav-item active"><a href="../clubs/" class="nav-link" aria-current="page">Le Club</a></li>
+                <li class="nav-item"><a href="../nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="../abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item"><a href="../contact/" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-cta">
@@ -640,8 +645,8 @@
     <section class="page-hero">
         <div class="page-hero-media">
             <picture>
-                <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-                <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis" width="1200" height="1600" fetchpriority="high" decoding="async">
+                <source srcset="../photo_salle/planning_mma_card.webp" type="image/webp">
+                <img src="../photo_salle/planning_mma_card.jpg" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis" width="1200" height="1600" fetchpriority="high" decoding="async">
             </picture>
         </div>
         <div class="page-hero-overlay"></div>
@@ -656,7 +661,7 @@
             </ul>
             <div class="hero-btns">
                 <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Faire un essai — 10 €</a>
-                <a href="planning/" class="btn btn-secondary">Voir le planning</a>
+                <a href="../planning/" class="btn btn-secondary">Voir le planning</a>
             </div>
         </div>
     </section>
@@ -674,8 +679,8 @@
                 </div>
                 <div class="intro-photo feature-img-wrapper">
                     <picture>
-                        <source srcset="club/img5.webp" type="image/webp">
-                        <img src="club/img5.jpg" alt="Vue de la salle Boxing Center États-Unis : ring de compétition et tatamis" width="1086" height="1448" loading="lazy" decoding="async">
+                        <source srcset="../club/img5.webp" type="image/webp">
+                        <img src="../club/img5.jpg" alt="Vue de la salle Boxing Center États-Unis : ring de compétition et tatamis" width="1086" height="1448" loading="lazy" decoding="async">
                     </picture>
                 </div>
             </div>
@@ -837,20 +842,20 @@
             <p class="club-lead section-lead-center">1 200 m² répartis en trois espaces spécialisés. Cliquez sur une photo pour l'agrandir.</p>
 
             <div class="gallery-grid">
-                <button type="button" class="gallery-item" data-src="club/img1.jpg" data-alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
-                    <img src="club/img1.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
+                <button type="button" class="gallery-item" data-src="../club/img1.jpg" data-alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
+                    <img src="../club/img1.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring de compétition et surface de tatamis dans la salle Boxing Center États-Unis">
                     <span class="gallery-caption">Ring &amp; tatamis</span>
                 </button>
-                <button type="button" class="gallery-item" data-src="club/img2.jpg" data-alt="Ring au premier plan et cage d'entraînement au fond">
-                    <img src="club/img2.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring au premier plan et cage d'entraînement au fond">
+                <button type="button" class="gallery-item" data-src="../club/img2.jpg" data-alt="Ring au premier plan et cage d'entraînement au fond">
+                    <img src="../club/img2.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Ring au premier plan et cage d'entraînement au fond">
                     <span class="gallery-caption">Ring &amp; cage</span>
                 </button>
-                <button type="button" class="gallery-item" data-src="club/img3.jpg" data-alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
-                    <img src="club/img3.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
+                <button type="button" class="gallery-item" data-src="../club/img3.jpg" data-alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
+                    <img src="../club/img3.jpg" width="1600" height="1066" loading="lazy" decoding="async" alt="Grande surface de tatamis, ring et drapeaux des nations au mur">
                     <span class="gallery-caption">Espace au sol</span>
                 </button>
-                <button type="button" class="gallery-item" data-src="photo_salle/planning_mma_card.jpg" data-alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis">
-                    <img src="photo_salle/planning_mma_card.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis">
+                <button type="button" class="gallery-item" data-src="../photo_salle/planning_mma_card.jpg" data-alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis">
+                    <img src="../photo_salle/planning_mma_card.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis">
                     <span class="gallery-caption">Cage &amp; grappling</span>
                 </button>
             </div>
@@ -861,7 +866,7 @@
     <section class="section" style="background: var(--bg-primary);">
         <div class="container">
             <div class="values-band">
-                <img src="photo_salle/salle_cage_ring.jpg" width="1600" height="891" loading="lazy" decoding="async" alt="Cage MMA et ring de compétition dans la salle">
+                <img src="../photo_salle/salle_cage_ring.jpg" width="1600" height="891" loading="lazy" decoding="async" alt="Cage MMA et ring de compétition dans la salle">
                 <div class="values-inner">
                     <h2 class="club-h2">Nos <span>Valeurs</span></h2>
                     <p class="values-sign script">Passion &amp; Discipline</p>
@@ -897,7 +902,7 @@
             <div class="grid-2 coach-card">
                 <div class="coach-body">
                     <div class="coach-head">
-                        <img src="photo_salle/photo_coach.jpg" alt="Coach Renaud Chavaudra" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
+                        <img src="../photo_salle/photo_coach.jpg" alt="Coach Renaud Chavaudra" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
                         <div>
                             <h3 class="club-h3" style="margin: 0;">Renaud <span>Chavaudra</span></h3>
                             <p class="coach-role">Coach Boxe Pieds-Poings</p>
@@ -928,7 +933,7 @@
             <div class="grid-2 coach-card" style="margin-top: 2rem;">
                 <div class="coach-body">
                     <div class="coach-head">
-                        <img src="photo_salle/photo_coach_zouhir.webp" alt="Coach Zouhir Boumenir" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
+                        <img src="../photo_salle/photo_coach_zouhir.webp" alt="Coach Zouhir Boumenir" class="coach-avatar" width="96" height="96" loading="lazy" decoding="async">
                         <div>
                             <h3 class="club-h3" style="margin: 0;">Zouhir <span>Boumenir</span></h3>
                             <p class="coach-role">Grappling &amp; Jiu-Jitsu brésilien</p>
@@ -970,7 +975,7 @@
             <!-- Colonne 1 : Logo & Infos -->
             <div class="footer-about">
                 <div class="footer-brand">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
                 <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
                 </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
@@ -984,8 +989,8 @@
             <div>
                 <h3 class="footer-title">Plannings & Horaires</h3>
                 <ul class="footer-links">
-                    <li><a href="planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
-                    <li><a href="nos-clubs/">Nos clubs</a></li>
+                    <li><a href="../planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="../nos-clubs/">Nos clubs</a></li>
                 </ul>
             </div>
 
@@ -994,7 +999,7 @@
                 <h3 class="footer-title">Boxing Center</h3>
                 <ul class="footer-links" style="margin-bottom: 2rem;">
                     <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
-                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="../abonnements/">Abonnements</a></li>
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
                 </ul>
                 <div class="social-links">
@@ -1017,8 +1022,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/offers.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/offers.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const hasIO = 'IntersectionObserver' in window;

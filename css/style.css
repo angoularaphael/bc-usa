@@ -558,8 +558,11 @@ header.scrolled .nav-wrapper {
 }
 
 .header-logo {
+    display: block;
     height: 48px;
     width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
     transition: var(--transition-smooth);
 }
 

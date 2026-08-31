@@ -74,23 +74,23 @@ class QuietHandler(SimpleHTTPRequestHandler):
             return True
 
         if raw == "/index.html":
-            self.redirect(f"/{qs}" if qs else "/")
+            self.redirect("./" + qs)
             return True
 
         if raw.endswith(".html"):
             stem = raw[1:-5]
             if stem in PAGES:
-                self.redirect(f"/{stem}/{qs}")
+                self.redirect(f"{stem}/{qs}")
                 return True
             if raw.endswith("/index.html"):
                 folder = raw[1:-11].strip("/")
                 if folder in PAGES:
-                    self.redirect(f"/{folder}/{qs}")
+                    self.redirect("./" + qs)
                     return True
 
         stripped = raw.strip("/")
         if stripped in PAGES and not raw.endswith("/"):
-            self.redirect(f"/{stripped}/{qs}")
+            self.redirect(f"{stripped}/{qs}")
             return True
 
         if stripped in PAGES and raw.endswith("/"):

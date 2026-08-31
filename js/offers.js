@@ -20,7 +20,13 @@
         }
     ];
 
-    const GLOVE_SRC = 'photo_salle/hero_gants.webp';
+    const GLOVE_SRC = (function () {
+        var parts = location.pathname.replace(/\/index\.html$/, '/').split('/').filter(Boolean);
+        var pages = ['disciplines', 'planning', 'clubs', 'nos-clubs', 'abonnements', 'contact'];
+        return pages.indexOf(parts[parts.length - 1]) !== -1
+            ? '../photo_salle/hero_gants.webp'
+            : 'photo_salle/hero_gants.webp';
+    })();
     const ROTATE_MS = 5500;
     const IDLE_DESKTOP = 2400;
     const IDLE_MOBILE = 1300;

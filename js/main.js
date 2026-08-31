@@ -1,13 +1,3 @@
-(function fixHashLinksForBase() {
-    if (!document.querySelector('base')) return;
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        const hash = anchor.getAttribute('href');
-        if (hash && hash.length > 1) {
-            anchor.setAttribute('href', location.pathname + hash);
-        }
-    });
-})();
-
 function sitePageSlug() {
     let path = location.pathname;
     ['/boxing_center_etats_unis', '/boxing_center', '/bc-usa'].forEach((prefix) => {

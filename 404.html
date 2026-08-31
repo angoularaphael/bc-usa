@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <script>
     (function () {
-        var p = location.pathname;
-        var root = '/';
-        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
-            if (p.indexOf(prefix) === 0) root = prefix;
-        });
-        var base = document.createElement('base');
-        base.href = location.origin + root;
-        document.head.appendChild(base);
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
     })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

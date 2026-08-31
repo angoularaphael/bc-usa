@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <script>
     (function () {
-        var p = location.pathname;
-        var root = '/';
-        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
-            if (p.indexOf(prefix) === 0) root = prefix;
-        });
-        var base = document.createElement('base');
-        base.href = location.origin + root;
-        document.head.appendChild(base);
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
     })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness au Boxing Center Toulouse États-Unis. Un planning par espace de pratique.">
     <title>Plannings & Horaires | Boxing Center Toulouse États-Unis</title>
-    <link rel="canonical" href="planning/">
+    <link rel="canonical" href="./">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="planning/">
+    <meta property="og:url" content="./">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
     <meta property="og:title" content="Plannings & Horaires | Boxing Center Toulouse États-Unis">
     <meta property="og:description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness à Toulouse.">
-    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image" content="../photo_salle/salle_cage_ring.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="891">
@@ -34,13 +39,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Plannings & Horaires | Boxing Center Toulouse États-Unis">
     <meta name="twitter:description" content="Horaires 2026-2027 des cours de boxe, MMA, grappling et fitness à Toulouse.">
-    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
-    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <meta name="twitter:image" content="../photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="../logo/logo_transparent_v2.png">
     <!-- Style CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .page-banner {
             padding: 8rem 0 4rem;
@@ -509,11 +514,11 @@
             }
         }
     </style>
-    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <link rel="icon" type="image/png" href="../logo/logo_transparent_v2.png">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"./"},{"@type":"ListItem","position":2,"name":"Plannings","item":"planning/"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"../"},{"@type":"ListItem","position":2,"name":"Plannings","item":"./"}]}
     </script>
-    <script src="js/seo.js"></script>
+    <script src="../js/seo.js"></script>
 </head>
 <body>
 
@@ -522,8 +527,8 @@
     <!-- Header / Navigation -->
     <header>
         <div class="container nav-wrapper">
-            <a href="./" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            <a href="../" class="logo-link">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
 
             <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
@@ -533,13 +538,13 @@
             </button>
 
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
-                <li class="nav-item active"><a href="planning/" class="nav-link" aria-current="page">Plannings</a></li>
-                <li class="nav-item"><a href="clubs/" class="nav-link">Le Club</a></li>
-                <li class="nav-item"><a href="nos-clubs/" class="nav-link">Nos clubs</a></li>
-                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="../" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="../disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item active"><a href="../planning/" class="nav-link" aria-current="page">Plannings</a></li>
+                <li class="nav-item"><a href="../clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="../nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="../abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item"><a href="../contact/" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-cta">
@@ -553,8 +558,8 @@
     <section class="page-hero">
         <div class="page-hero-media">
             <picture>
-                <source srcset="photo_salle/espace_boxe.webp" type="image/webp">
-                <img src="photo_salle/espace_boxe.jpg" alt="Salle de boxe du Boxing Center Toulouse États-Unis" width="1600" height="1200" fetchpriority="high" decoding="async">
+                <source srcset="../photo_salle/espace_boxe.webp" type="image/webp">
+                <img src="../photo_salle/espace_boxe.jpg" alt="Salle de boxe du Boxing Center Toulouse États-Unis" width="1600" height="1200" fetchpriority="high" decoding="async">
             </picture>
         </div>
         <div class="page-hero-overlay"></div>
@@ -625,8 +630,8 @@
                              empiles dans la meme cellule de grille, les inactifs en visibility:hidden.
                              Une image lazy dans un conteneur masque peut ne jamais se charger, et le
                              visiteur verrait un cadre vide en changeant d'onglet. -->
-                        <button type="button" class="planning-figure" data-src="horaires/planning-boxe.jpg" data-alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
-                            <img src="horaires/planning-boxe.jpg" width="1600" height="1131" decoding="async" alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
+                        <button type="button" class="planning-figure" data-src="../horaires/planning-boxe.jpg" data-alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
+                            <img src="../horaires/planning-boxe.jpg" width="1600" height="1131" decoding="async" alt="Planning 2026-2027 de la salle Boxe : boxe anglaise, boxe pieds-poings, kick et cours enfants, du lundi au samedi">
                             <span class="planning-figure-overlay">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                 Agrandir
@@ -638,7 +643,7 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                                 Cliquez sur le planning pour l'agrandir
                             </p>
-                            <a class="btn btn-secondary planning-dl" href="horaires/planning-boxe.jpg" download="planning-boxe-2026-2027.jpg">
+                            <a class="btn btn-secondary planning-dl" href="../horaires/planning-boxe.jpg" download="planning-boxe-2026-2027.jpg">
                                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
                             </a>
                         </div>
@@ -660,8 +665,8 @@
                             </ul>
                         </div>
 
-                        <button type="button" class="planning-figure" data-src="horaires/planning-fitness.jpg" data-alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
-                            <img src="horaires/planning-fitness.jpg" width="1600" height="1131" loading="lazy" decoding="async" alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
+                        <button type="button" class="planning-figure" data-src="../horaires/planning-fitness.jpg" data-alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
+                            <img src="../horaires/planning-fitness.jpg" width="1600" height="1131" loading="lazy" decoding="async" alt="Planning 2026-2027 Boxing Fitness : Hyrox, Boxing HIIT, Cross-Training et Lady Punch, du lundi au samedi">
                             <span class="planning-figure-overlay">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                 Agrandir
@@ -673,7 +678,7 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                                 Cliquez sur le planning pour l'agrandir
                             </p>
-                            <a class="btn btn-secondary planning-dl" href="horaires/planning-fitness.jpg" download="planning-fitness-2026-2027.jpg">
+                            <a class="btn btn-secondary planning-dl" href="../horaires/planning-fitness.jpg" download="planning-fitness-2026-2027.jpg">
                                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
                             </a>
                         </div>
@@ -695,8 +700,8 @@
                             </ul>
                         </div>
 
-                        <button type="button" class="planning-figure" data-src="horaires/planning-mma.jpg" data-alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
-                            <img src="horaires/planning-mma.jpg" width="1600" height="808" loading="lazy" decoding="async" alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
+                        <button type="button" class="planning-figure" data-src="../horaires/planning-mma.jpg" data-alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
+                            <img src="../horaires/planning-mma.jpg" width="1600" height="808" loading="lazy" decoding="async" alt="Planning 2026-2027 de la salle MMA : Asso MMA, grappling, jiu-jitsu brésilien et MMA enfants 10/16 ans, du lundi au samedi">
                             <span class="planning-figure-overlay">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                 Agrandir
@@ -708,7 +713,7 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                                 Cliquez sur le planning pour l'agrandir
                             </p>
-                            <a class="btn btn-secondary planning-dl" href="horaires/planning-mma.jpg" download="planning-mma-2026-2027.jpg">
+                            <a class="btn btn-secondary planning-dl" href="../horaires/planning-mma.jpg" download="planning-mma-2026-2027.jpg">
                                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger l'image
                             </a>
                         </div>
@@ -730,7 +735,7 @@
 
             <!-- Version imprimable des 3 plannings -->
             <p class="planning-pdf">
-                <a class="btn btn-secondary" href="horaires/plannings-boxing-center-etats-unis-2026-2027.pdf" download="plannings-boxing-center-etats-unis-2026-2027.pdf">
+                <a class="btn btn-secondary" href="../horaires/plannings-boxing-center-etats-unis-2026-2027.pdf" download="plannings-boxing-center-etats-unis-2026-2027.pdf">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Télécharger les 3 plannings (PDF, 3 pages)
                 </a>
             </p>
@@ -759,7 +764,7 @@
             <!-- Colonne 1 : Logo & Infos -->
             <div class="footer-about">
                 <div class="footer-brand">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
                 <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
                 </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
@@ -773,8 +778,8 @@
             <div>
                 <h3 class="footer-title">Plannings & Horaires</h3>
                 <ul class="footer-links">
-                    <li><a href="planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
-                    <li><a href="nos-clubs/">Nos clubs</a></li>
+                    <li><a href="../planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="../nos-clubs/">Nos clubs</a></li>
                 </ul>
             </div>
 
@@ -783,7 +788,7 @@
                 <h3 class="footer-title">Boxing Center</h3>
                 <ul class="footer-links" style="margin-bottom: 2rem;">
                     <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
-                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="../abonnements/">Abonnements</a></li>
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
                 </ul>
                 <div class="social-links">
@@ -806,8 +811,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/offers.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/offers.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = Array.from(document.querySelectorAll('.planning-tab'));

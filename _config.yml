@@ -2,3 +2,6 @@ exclude:
   - serve.py
   - optimize_images.py
   - README.md
+include:
+  - logo/logo_transparent_v2.png
+

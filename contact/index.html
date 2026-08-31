@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <script>
     (function () {
-        var p = location.pathname;
-        var root = '/';
-        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
-            if (p.indexOf(prefix) === 0) root = prefix;
-        });
-        var base = document.createElement('base');
-        base.href = location.origin + root;
-        document.head.appendChild(base);
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
     })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Boxing Center Toulouse États-Unis : 388 Avenue des États-Unis, 31200 Toulouse. Téléphone 05 62 24 46 82, itinéraire et séance d'essai 10 €.">
     <title>Contact & Accès | Boxing Center Toulouse États-Unis</title>
-    <link rel="canonical" href="contact/">
+    <link rel="canonical" href="./">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="contact/">
+    <meta property="og:url" content="./">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
     <meta property="og:title" content="Contact & Accès | Boxing Center Toulouse États-Unis">
     <meta property="og:description" content="388 avenue des États-Unis, 31200 Toulouse. Téléphone, email et plan d'accès.">
-    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image" content="../photo_salle/salle_cage_ring.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="891">
@@ -34,13 +39,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact & Accès | Boxing Center Toulouse États-Unis">
     <meta name="twitter:description" content="388 avenue des États-Unis, 31200 Toulouse. Téléphone, email et plan d'accès.">
-    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
-    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <meta name="twitter:image" content="../photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="../logo/logo_transparent_v2.png">
     <!-- Style CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .page-banner {
             padding: 8rem 0 4rem;
@@ -110,7 +115,7 @@
             .map-wrapper { height: 360px; }
         }
     </style>
-    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <link rel="icon" type="image/png" href="../logo/logo_transparent_v2.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -118,8 +123,8 @@
         {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "index.html"},
-            {"@type": "ListItem", "position": 2, "name": "Contact", "item": "contact.html"}
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "../"},
+            {"@type": "ListItem", "position": 2, "name": "Contact", "item": "./"}
           ]
         },
         {
@@ -140,7 +145,7 @@
       ]
     }
     </script>
-    <script src="js/seo.js"></script>
+    <script src="../js/seo.js"></script>
 </head>
 <body>
 
@@ -149,8 +154,8 @@
     <!-- Header / Navigation -->
     <header>
         <div class="container nav-wrapper">
-            <a href="./" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            <a href="../" class="logo-link">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
             
             <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
@@ -160,13 +165,13 @@
             </button>
             
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
-                <li class="nav-item"><a href="planning/" class="nav-link">Plannings</a></li>
-                <li class="nav-item"><a href="clubs/" class="nav-link">Le Club</a></li>
-                <li class="nav-item"><a href="nos-clubs/" class="nav-link">Nos clubs</a></li>
-                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
-                <li class="nav-item active"><a href="contact/" class="nav-link" aria-current="page">Contact</a></li>
+                <li class="nav-item"><a href="../" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="../disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="../planning/" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="../clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="../nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="../abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item active"><a href="../contact/" class="nav-link" aria-current="page">Contact</a></li>
             </ul>
             
             <div class="nav-cta">
@@ -181,8 +186,8 @@
     <section class="page-hero">
         <div class="page-hero-media">
             <picture>
-                <source srcset="photo_salle/taii.webp" type="image/webp">
-                <img src="photo_salle/taii.jpg" alt="Entraînement au Boxing Center Toulouse États-Unis" width="1600" height="900" fetchpriority="high" decoding="async">
+                <source srcset="../photo_salle/taii.webp" type="image/webp">
+                <img src="../photo_salle/taii.jpg" alt="Entraînement au Boxing Center Toulouse États-Unis" width="1600" height="900" fetchpriority="high" decoding="async">
             </picture>
         </div>
         <div class="page-hero-overlay"></div>
@@ -271,7 +276,7 @@
             <!-- Colonne 1 : Logo & Infos -->
             <div class="footer-about">
                 <div class="footer-brand">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
                 <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
                 </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
@@ -285,8 +290,8 @@
             <div>
                 <h3 class="footer-title">Plannings & Horaires</h3>
                 <ul class="footer-links">
-                    <li><a href="planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
-                    <li><a href="nos-clubs/">Nos clubs</a></li>
+                    <li><a href="../planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="../nos-clubs/">Nos clubs</a></li>
                 </ul>
             </div>
 
@@ -295,7 +300,7 @@
                 <h3 class="footer-title">Boxing Center</h3>
                 <ul class="footer-links" style="margin-bottom: 2rem;">
                     <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
-                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="../abonnements/">Abonnements</a></li>
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
                 </ul>
                 <div class="social-links">
@@ -318,7 +323,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/offers.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/offers.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

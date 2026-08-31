@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <script>
     (function () {
-        var p = location.pathname;
-        var root = '/';
-        ['/boxing_center_etats_unis/', '/boxing_center/', '/bc-usa/'].forEach(function (prefix) {
-            if (p.indexOf(prefix) === 0) root = prefix;
-        });
-        var base = document.createElement('base');
-        base.href = location.origin + root;
-        document.head.appendChild(base);
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
     })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Les 5 clubs Boxing Center à Toulouse : Minimes, Saint-Cyprien, Ramonville, Portet-sur-Garonne et États-Unis. Accès 6j/7, boxe et sports de combat.">
     <title>5 salles Boxing Center à Toulouse | Nos clubs</title>
-    <link rel="canonical" href="nos-clubs/">
+    <link rel="canonical" href="./">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#030814">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="nos-clubs/">
+    <meta property="og:url" content="./">
     <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
     <meta property="og:title" content="5 salles Boxing Center à Toulouse | Nos clubs">
     <meta property="og:description" content="Découvrez les 5 salles Boxing Center à Toulouse et en agglomération.">
-    <meta property="og:image" content="photo_salle/salle_cage_ring.jpg">
+    <meta property="og:image" content="../photo_salle/salle_cage_ring.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="891">
@@ -34,12 +39,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="5 salles Boxing Center à Toulouse | Nos clubs">
     <meta name="twitter:description" content="Découvrez les 5 salles Boxing Center à Toulouse et en agglomération.">
-    <meta name="twitter:image" content="photo_salle/salle_cage_ring.jpg">
-    <link rel="apple-touch-icon" href="logo/logo_transparent_v2.png">
+    <meta name="twitter:image" content="../photo_salle/salle_cage_ring.jpg">
+    <link rel="apple-touch-icon" href="../logo/logo_transparent_v2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .page-banner {
             padding: 8rem 0 4rem;
@@ -52,11 +57,11 @@
             margin: 0 auto;
         }
     </style>
-    <link rel="icon" type="image/png" href="logo/logo_transparent_v2.png">
+    <link rel="icon" type="image/png" href="../logo/logo_transparent_v2.png">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"./"},{"@type":"ListItem","position":2,"name":"Nos clubs","item":"nos-clubs/"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"../"},{"@type":"ListItem","position":2,"name":"Nos clubs","item":"./"}]}
     </script>
-    <script src="js/seo.js"></script>
+    <script src="../js/seo.js"></script>
 </head>
 <body>
 
@@ -64,8 +69,8 @@
 
     <header>
         <div class="container nav-wrapper">
-            <a href="./" class="logo-link">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            <a href="../" class="logo-link">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
             </a>
             <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="bar"></span>
@@ -73,13 +78,13 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="./" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="disciplines/" class="nav-link">Disciplines</a></li>
-                <li class="nav-item"><a href="planning/" class="nav-link">Plannings</a></li>
-                <li class="nav-item"><a href="clubs/" class="nav-link">Le Club</a></li>
-                <li class="nav-item active"><a href="nos-clubs/" class="nav-link" aria-current="page">Nos clubs</a></li>
-                <li class="nav-item"><a href="abonnements/" class="nav-link">Abonnements</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="../" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="../disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="../planning/" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="../clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item active"><a href="../nos-clubs/" class="nav-link" aria-current="page">Nos clubs</a></li>
+                <li class="nav-item"><a href="../abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item"><a href="../contact/" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary double-outline-element">Faire un essai</a>
@@ -91,7 +96,7 @@
 
     <section class="page-hero">
         <div class="page-hero-media">
-            <img src="photo_clubs/st-cyprien.webp" alt="Salle Boxing Center Toulouse Saint-Cyprien" width="1286" height="900" fetchpriority="high" decoding="async">
+            <img src="../photo_clubs/st-cyprien.webp" alt="Salle Boxing Center Toulouse Saint-Cyprien" width="1286" height="900" fetchpriority="high" decoding="async">
         </div>
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-content">
@@ -103,7 +108,7 @@
                 <li>Accès 6j/7</li>
                 <li>Un seul abonnement</li>
             </ul>
-            <a href="abonnements/" class="btn btn-primary double-outline-element">Voir les abonnements</a>
+            <a href="../abonnements/" class="btn btn-primary double-outline-element">Voir les abonnements</a>
         </div>
     </section>
 
@@ -112,7 +117,7 @@
             <h2 id="autres-clubs-title" class="section-title">Les autres <span>salles</span></h2>
             <div class="network-grid">
                 <a class="network-card" href="https://boxingcenter.fr/salle-de-sport-toulouse/salle-de-boxe-toulouse-minimes/">
-                    <img src="photo_clubs/minimes.webp" alt="Boxing Center Toulouse Minimes" width="1350" height="900" loading="lazy" decoding="async">
+                    <img src="../photo_clubs/minimes.webp" alt="Boxing Center Toulouse Minimes" width="1350" height="900" loading="lazy" decoding="async">
                     <div class="network-card-overlay">
                         <span class="img-card-badge">Toulouse — Minimes</span>
                         <h2>Boxing Center Minimes</h2>
@@ -122,7 +127,7 @@
                 </a>
 
                 <a class="network-card" href="https://boxingcenter.fr/salle-de-sport-toulouse/boxing-center-salle-de-toulouse-saint-cyprien/">
-                    <img src="photo_clubs/st-cyprien.webp" alt="Boxing Center Toulouse Saint-Cyprien" width="1286" height="900" loading="lazy" decoding="async">
+                    <img src="../photo_clubs/st-cyprien.webp" alt="Boxing Center Toulouse Saint-Cyprien" width="1286" height="900" loading="lazy" decoding="async">
                     <div class="network-card-overlay">
                         <span class="img-card-badge">Toulouse — Saint-Cyprien</span>
                         <h2>Boxing Center Saint-Cyprien</h2>
@@ -132,7 +137,7 @@
                 </a>
 
                 <a class="network-card" href="https://boxingcenter.fr/salle-de-sport-toulouse/salle-de-boxe-toulouse-ramonville/">
-                    <img src="photo_clubs/ramonville.webp" alt="Boxing Center Ramonville-Saint-Agne" width="1348" height="900" loading="lazy" decoding="async">
+                    <img src="../photo_clubs/ramonville.webp" alt="Boxing Center Ramonville-Saint-Agne" width="1348" height="900" loading="lazy" decoding="async">
                     <div class="network-card-overlay">
                         <span class="img-card-badge">Ramonville-Saint-Agne</span>
                         <h2>Boxing Center Ramonville</h2>
@@ -142,7 +147,7 @@
                 </a>
 
                 <a class="network-card" href="https://boxingcenter.fr/salle-de-sport-toulouse/salle-de-boxe-portet-sur-garonne-2/">
-                    <img src="photo_clubs/portet.webp" alt="Boxing Center Portet-sur-Garonne" width="1400" height="804" loading="lazy" decoding="async">
+                    <img src="../photo_clubs/portet.webp" alt="Boxing Center Portet-sur-Garonne" width="1400" height="804" loading="lazy" decoding="async">
                     <div class="network-card-overlay">
                         <span class="img-card-badge">Portet-sur-Garonne</span>
                         <h2>Boxing Center Portet</h2>
@@ -159,8 +164,8 @@
             <h2 id="ce-club-title" class="section-title">Vous êtes ici : <span>États-Unis</span></h2>
             <a class="network-card network-card--wide" href="https://boxingcenter.fr/salle-de-sport-toulouse/boxing-center-salle-de-toulouse-etats-unis/">
                 <picture>
-                    <source srcset="photo_salle/etats_unis_salle.webp" type="image/webp">
-                    <img src="photo_salle/etats_unis_salle.jpg" alt="Boxing Center Toulouse États-Unis" width="1536" height="1024" loading="lazy" decoding="async">
+                    <source srcset="../photo_salle/etats_unis_salle.webp" type="image/webp">
+                    <img src="../photo_salle/etats_unis_salle.jpg" alt="Boxing Center Toulouse États-Unis" width="1536" height="1024" loading="lazy" decoding="async">
                 </picture>
                 <div class="network-card-overlay">
                     <span class="network-here">Vous êtes ici</span>
@@ -188,7 +193,7 @@
         <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
             <div class="footer-about">
                 <div class="footer-brand">
-                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
                 <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
                 </div>
                 <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
@@ -200,16 +205,16 @@
             <div>
                 <h3 class="footer-title">Accès rapide</h3>
                 <ul class="footer-links">
-                    <li><a href="planning/">Plannings</a></li>
-                    <li><a href="nos-clubs/">Nos clubs</a></li>
-                    <li><a href="contact/">Contact</a></li>
+                    <li><a href="../planning/">Plannings</a></li>
+                    <li><a href="../nos-clubs/">Nos clubs</a></li>
+                    <li><a href="../contact/">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="footer-title">Rejoindre le club</h3>
                 <ul class="footer-links" style="margin-bottom: 1.5rem;">
                     <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" style="color: var(--bronze); font-weight:700;">Séance d'essai 10 €</a></li>
-                    <li><a href="abonnements/">Abonnements</a></li>
+                    <li><a href="../abonnements/">Abonnements</a></li>
                     <li><a href="https://boutique.boxingcenter.fr/" target="_blank" rel="noopener">Boutique</a></li>
                 </ul>
                 <div class="social-links">
@@ -229,7 +234,7 @@
         <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
     </div>
 
-    <script src="js/offers.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/offers.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
