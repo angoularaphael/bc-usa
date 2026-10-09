@@ -7,7 +7,7 @@
             price: '29 €',
             period: '1re échéance',
             title: 'Sans engagement',
-            hook: 'Puis 44 € / 4 semaines. Résiliation sans préavis.',
+            hook: 'Puis 44,99 € / 4 semaines. Résiliation sans préavis.',
             url: 'https://boutique.boxingcenter.fr/offre/29'
         },
         {
