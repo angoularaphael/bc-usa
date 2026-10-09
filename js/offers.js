@@ -22,7 +22,7 @@
 
     const GLOVE_SRC = (function () {
         var parts = location.pathname.replace(/\/index\.html$/, '/').split('/').filter(Boolean);
-        var pages = ['disciplines', 'planning', 'clubs', 'nos-clubs', 'abonnements', 'contact'];
+        var pages = ['disciplines', 'planning', 'clubs', 'nos-clubs', 'abonnements', 'contact', 'mentions-legales'];
         return pages.indexOf(parts[parts.length - 1]) !== -1
             ? '../photo_salle/hero_gants.webp'
             : 'photo_salle/hero_gants.webp';

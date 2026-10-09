@@ -46,7 +46,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preload" as="image" href="photo_salle/hero_gants.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" type="image/avif" href="photo_salle/boxeur-au-sac-sous-le-drapeau-francais.avif" imagesrcset="photo_salle/boxeur-au-sac-sous-le-drapeau-francais-800.avif 800w, photo_salle/boxeur-au-sac-sous-le-drapeau-francais.avif 1600w" imagesizes="(max-width: 992px) 100vw, 58vw" fetchpriority="high">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?i=3">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?i=3">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?i=3">
@@ -140,8 +140,9 @@
     <section class="hero">
         <div class="hero-visual">
             <picture>
-                <source srcset="photo_salle/hero_gants.webp" type="image/webp">
-                <img src="photo_salle/hero_gants.jpg" alt="Gants de boxe dans la salle du Boxing Center Toulouse États-Unis" width="732" height="730" fetchpriority="high" decoding="async">
+                <source type="image/avif" sizes="(max-width: 992px) 100vw, 58vw" srcset="photo_salle/boxeur-au-sac-sous-le-drapeau-francais-800.avif 800w, photo_salle/boxeur-au-sac-sous-le-drapeau-francais.avif 1600w">
+                <source type="image/webp" sizes="(max-width: 992px) 100vw, 58vw" srcset="photo_salle/boxeur-au-sac-sous-le-drapeau-francais-800.webp 800w, photo_salle/boxeur-au-sac-sous-le-drapeau-francais.webp 1600w">
+                <img src="photo_salle/boxeur-au-sac-sous-le-drapeau-francais.jpg" alt="Boxeur casqué au sac de frappe Boxing Center, sous le drapeau français, au club de Toulouse États-Unis" width="1600" height="1920" fetchpriority="high" decoding="async">
             </picture>
         </div>
 
@@ -210,8 +211,9 @@
     <section class="editorial-split" aria-labelledby="identite-title">
         <div class="editorial-media">
             <picture>
-                <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-                <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+                <source type="image/avif" sizes="(max-width: 992px) 100vw, 50vw" srcset="photo_salle/frappe-aux-paos-contre-la-cage-600.avif 600w, photo_salle/frappe-aux-paos-contre-la-cage.avif 1200w">
+                <source type="image/webp" sizes="(max-width: 992px) 100vw, 50vw" srcset="photo_salle/frappe-aux-paos-contre-la-cage-600.webp 600w, photo_salle/frappe-aux-paos-contre-la-cage.webp 1200w">
+                <img src="photo_salle/frappe-aux-paos-contre-la-cage.jpg" alt="Une adhérente frappe aux paos tenus par son partenaire, contre la cage MMA du club" width="1200" height="1500" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="editorial-copy">
@@ -270,8 +272,9 @@
             <div class="disc-tiles">
                 <a href="disciplines/" class="disc-tile">
                     <picture>
-                        <source srcset="photo_salle/espace_boxe.webp" type="image/webp">
-                        <img src="photo_salle/espace_boxe.jpg" alt="Salle de boxe du Boxing Center Toulouse États-Unis" width="1600" height="1200" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/shadow-boxing-devant-la-cage-500.avif 500w, photo_salle/shadow-boxing-devant-la-cage.avif 1000w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/shadow-boxing-devant-la-cage-500.webp 500w, photo_salle/shadow-boxing-devant-la-cage.webp 1000w">
+                        <img src="photo_salle/shadow-boxing-devant-la-cage.jpg" alt="Shadow boxing devant la cage MMA pendant un cours de boxe" width="1000" height="1250" loading="lazy" decoding="async">
                     </picture>
                     <div class="disc-tile-body">
                         <span class="feature-tag">Les poings</span>
@@ -282,8 +285,9 @@
                 </a>
                 <a href="disciplines/" class="disc-tile">
                     <picture>
-                        <source srcset="photo_salle/taii-800.webp" type="image/webp">
-                        <img src="photo_salle/taii.jpg" alt="Coup de genou travaillé aux paos sur le ring" width="1024" height="682" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/genou-aux-paos-pieds-poings-500.avif 500w, photo_salle/genou-aux-paos-pieds-poings.avif 1000w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/genou-aux-paos-pieds-poings-500.webp 500w, photo_salle/genou-aux-paos-pieds-poings.webp 1000w">
+                        <img src="photo_salle/genou-aux-paos-pieds-poings.jpg" alt="Coup de genou aux paos pendant un cours de pieds-poings, devant la cage" width="1000" height="1250" loading="lazy" decoding="async">
                     </picture>
                     <div class="disc-tile-body">
                         <span class="feature-tag">Pieds-poings</span>
@@ -294,8 +298,9 @@
                 </a>
                 <a href="disciplines/#mma" class="disc-tile">
                     <picture>
-                        <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-                        <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA du club Boxing Center à Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/jjb-kimono-drapeau-bresil-500.avif 500w, photo_salle/jjb-kimono-drapeau-bresil.avif 1000w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/jjb-kimono-drapeau-bresil-500.webp 500w, photo_salle/jjb-kimono-drapeau-bresil.webp 1000w">
+                        <img src="photo_salle/jjb-kimono-drapeau-bresil.jpg" alt="Grappling en kimono au sol, drapeau du Brésil et protections de la cage" width="1000" height="1250" loading="lazy" decoding="async">
                     </picture>
                     <div class="disc-tile-body">
                         <span class="feature-tag">Le sol</span>
@@ -319,8 +324,9 @@
 
     <section class="immersive" aria-labelledby="espaces-title">
         <picture>
-            <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-            <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA du Boxing Center Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+            <source type="image/avif" sizes="100vw" srcset="photo_salle/la-grande-salle-ring-et-cage-800.avif 800w, photo_salle/la-grande-salle-ring-et-cage.avif 1600w">
+            <source type="image/webp" sizes="100vw" srcset="photo_salle/la-grande-salle-ring-et-cage-800.webp 800w, photo_salle/la-grande-salle-ring-et-cage.webp 1600w">
+            <img src="photo_salle/la-grande-salle-ring-et-cage.jpg" alt="La grande salle : le ring au premier plan, la cage MMA au fond, un cours en pleine séance" width="1600" height="901" loading="lazy" decoding="async">
         </picture>
         <div class="container immersive-body">
             <span class="eyebrow">Les espaces</span>
@@ -335,8 +341,9 @@
             <div class="bento-spaces">
                 <a href="disciplines/#mma" class="bento-tile bento-tile--lg">
                     <picture>
-                        <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-                        <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 992px) 100vw, 58vw" srcset="photo_salle/jjb-debout-devant-la-cage-700.avif 700w, photo_salle/jjb-debout-devant-la-cage.avif 1400w">
+                        <source type="image/webp" sizes="(max-width: 992px) 100vw, 58vw" srcset="photo_salle/jjb-debout-devant-la-cage-700.webp 700w, photo_salle/jjb-debout-devant-la-cage.webp 1400w">
+                        <img src="photo_salle/jjb-debout-devant-la-cage.jpg" alt="Deux pratiquants en kimono, saisies debout devant la cage et les drapeaux des nations" width="1400" height="1167" loading="lazy" decoding="async">
                     </picture>
                     <div class="bento-tile-body">
                         <span class="feature-tag">400 m²</span>
@@ -347,8 +354,9 @@
                 </a>
                 <a href="disciplines/" class="bento-tile">
                     <picture>
-                        <source srcset="photo_salle/espace_boxe.webp" type="image/webp">
-                        <img src="photo_salle/espace_boxe.jpg" alt="Salle de boxe : sacs de frappe et entraînement au Boxing Center Toulouse États-Unis" width="1600" height="1200" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 992px) 100vw, 42vw" srcset="photo_salle/cours-de-boxe-devant-le-ring-600.avif 600w, photo_salle/cours-de-boxe-devant-le-ring.avif 1200w">
+                        <source type="image/webp" sizes="(max-width: 992px) 100vw, 42vw" srcset="photo_salle/cours-de-boxe-devant-le-ring-600.webp 600w, photo_salle/cours-de-boxe-devant-le-ring.webp 1200w">
+                        <img src="photo_salle/cours-de-boxe-devant-le-ring.jpg" alt="Cours collectif de boxe, garde haute, devant le ring bleu" width="1200" height="675" loading="lazy" decoding="async">
                     </picture>
                     <div class="bento-tile-body">
                         <span class="feature-tag">400 m²</span>
@@ -359,8 +367,9 @@
                 </a>
                 <a href="planning/#fitness" class="bento-tile">
                     <picture>
-                        <source srcset="photo_salle/DSC00983.webp" type="image/webp">
-                        <img src="photo_salle/DSC00983.jpg" alt="Espace sacs de frappe et préparation physique" width="1600" height="1200" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 992px) 100vw, 42vw" srcset="photo_salle/rig-de-musculation-rouge-600.avif 600w, photo_salle/rig-de-musculation-rouge.avif 1200w">
+                        <source type="image/webp" sizes="(max-width: 992px) 100vw, 42vw" srcset="photo_salle/rig-de-musculation-rouge-600.webp 600w, photo_salle/rig-de-musculation-rouge.webp 1200w">
+                        <img src="photo_salle/rig-de-musculation-rouge.jpg" alt="Espace de préparation physique : rig rouge, disques et bancs de musculation" width="1200" height="675" loading="lazy" decoding="async">
                     </picture>
                     <div class="bento-tile-body">
                         <span class="feature-tag">400 m²</span>
@@ -420,8 +429,9 @@
             <div class="planning-preview">
                 <a href="planning/#boxe" class="planning-card">
                     <picture>
-                        <source srcset="photo_salle/planning_boxe_card.webp" type="image/webp">
-                        <img src="photo_salle/planning_boxe_card.jpg" alt="Ring de boxe dans la salle du Boxing Center Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/shadow-boxing-cours-de-boxe-450.avif 450w, photo_salle/shadow-boxing-cours-de-boxe.avif 900w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/shadow-boxing-cours-de-boxe-450.webp 450w, photo_salle/shadow-boxing-cours-de-boxe.webp 900w">
+                        <img src="photo_salle/shadow-boxing-cours-de-boxe.jpg" alt="Shadow boxing pendant un cours de boxe, le groupe observe le jab" width="900" height="600" loading="lazy" decoding="async">
                     </picture>
                     <div class="planning-card-body">
                         <span class="feature-tag">Salle Boxe</span>
@@ -432,8 +442,9 @@
                 </a>
                 <a href="planning/#fitness" class="planning-card">
                     <picture>
-                        <source srcset="photo_salle/DSC00983.webp" type="image/webp">
-                        <img src="photo_salle/DSC00983.jpg" alt="Espace de préparation physique et cross-training" width="800" height="600" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/renforcement-halteres-au-sol-450.avif 450w, photo_salle/renforcement-halteres-au-sol.avif 900w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/renforcement-halteres-au-sol-450.webp 450w, photo_salle/renforcement-halteres-au-sol.webp 900w">
+                        <img src="photo_salle/renforcement-halteres-au-sol.jpg" alt="Renforcement au sol avec haltères pendant un cours de fitness" width="900" height="675" loading="lazy" decoding="async">
                     </picture>
                     <div class="planning-card-body">
                         <span class="feature-tag">Préparation physique</span>
@@ -444,8 +455,9 @@
                 </a>
                 <a href="planning/#mma" class="planning-card">
                     <picture>
-                        <source srcset="photo_salle/planning_mma_card.webp" type="image/webp">
-                        <img src="photo_salle/planning_mma_card.jpg" alt="Cage MMA et tatamis au Boxing Center Toulouse États-Unis" width="1200" height="1600" loading="lazy" decoding="async">
+                        <source type="image/avif" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/cours-de-jjb-sur-les-tatamis-450.avif 450w, photo_salle/cours-de-jjb-sur-les-tatamis.avif 900w">
+                        <source type="image/webp" sizes="(max-width: 768px) 100vw, 33vw" srcset="photo_salle/cours-de-jjb-sur-les-tatamis-450.webp 450w, photo_salle/cours-de-jjb-sur-les-tatamis.webp 900w">
+                        <img src="photo_salle/cours-de-jjb-sur-les-tatamis.jpg" alt="Cours de jiu-jitsu brésilien sur les tatamis, sous l’enseigne Boxing Center" width="900" height="601" loading="lazy" decoding="async">
                     </picture>
                     <div class="planning-card-body">
                         <span class="feature-tag">Striking &amp; Sol</span>
@@ -554,8 +566,9 @@
 
     <section class="immersive" aria-labelledby="cta-final-title">
         <picture>
-            <source srcset="photo_salle/taii-800.webp" type="image/webp">
-            <img src="photo_salle/taii.jpg" alt="Entraînement au Boxing Center Toulouse États-Unis" width="1024" height="682" loading="lazy" decoding="async">
+            <source type="image/avif" sizes="100vw" srcset="photo_salle/cours-de-boxe-a-cote-de-la-cage-800.avif 800w, photo_salle/cours-de-boxe-a-cote-de-la-cage.avif 1600w">
+            <source type="image/webp" sizes="100vw" srcset="photo_salle/cours-de-boxe-a-cote-de-la-cage-800.webp 800w, photo_salle/cours-de-boxe-a-cote-de-la-cage.webp 1600w">
+            <img src="photo_salle/cours-de-boxe-a-cote-de-la-cage.jpg" alt="Cours de boxe mixte à côté de la cage MMA du club" width="1600" height="900" loading="lazy" decoding="async">
         </picture>
         <div class="container immersive-body">
             <span class="eyebrow">Premier cours</span>
@@ -609,7 +622,7 @@
             </div>
         </div>
         <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés. · <a href="mentions-legales/">Mentions légales</a></p>
         </div>
     </footer>
 

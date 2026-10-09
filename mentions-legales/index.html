@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    (function () {
+        var path = location.pathname;
+        var file = path.split('/').pop() || '';
+        if (file === 'index.html') {
+            history.replaceState(null, '', './' + location.search + location.hash);
+            return;
+        }
+        if (/\.html$/.test(file) && file !== '404.html') {
+            location.replace(file.replace(/\.html$/, '') + '/' + location.search + location.hash);
+            return;
+        }
+        if (file && file.indexOf('.') === -1 && path.slice(-1) !== '/') {
+            location.replace(path + '/' + location.search + location.hash);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mentions légales du site clubmma.fr : éditeur SAS BOXING CENTER, directeur de la publication, hébergeur et crédits photographiques.">
+    <title>Mentions légales | Boxing Center Toulouse États-Unis</title>
+    <link rel="canonical" href="https://clubmma.fr/mentions-legales/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#030814">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://clubmma.fr/mentions-legales/">
+    <meta property="og:site_name" content="Boxing Center Toulouse États-Unis">
+    <meta property="og:title" content="Mentions légales | Boxing Center Toulouse États-Unis">
+    <meta property="og:description" content="Mentions légales du site clubmma.fr : éditeur SAS BOXING CENTER, directeur de la publication, hébergeur et crédits photographiques.">
+    <meta property="og:image" content="https://clubmma.fr/og/accueil.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="891">
+    <meta property="og:image:alt" content="Boxing Center Toulouse États-Unis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mentions légales | Boxing Center Toulouse États-Unis">
+    <meta name="twitter:description" content="Mentions légales du site clubmma.fr : éditeur SAS BOXING CENTER, directeur de la publication, hébergeur et crédits photographiques.">
+    <meta name="twitter:image" content="https://clubmma.fr/og/accueil.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?i=3">
+    <!-- Style CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;600;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Page juridique : une colonne de lecture, rien d'autre. */
+        .page-hero--plain { padding-bottom: 3rem; }
+        .legal { max-width: 820px; }
+        .legal h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 2.4rem 0 0.8rem; }
+        .legal h2:first-child { margin-top: 0; }
+        .legal p { color: var(--text-secondary); line-height: 1.7; max-width: 68ch; }
+        .legal p + p { margin-top: 0.8rem; }
+        .legal a { color: var(--bronze-light); }
+        .legal strong { color: var(--white); }
+    </style>
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png?i=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?i=3">
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png?i=3">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png?i=3">
+    <link rel="manifest" href="../site.webmanifest">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://clubmma.fr/"},
+            {"@type": "ListItem", "position": 2, "name": "Mentions légales", "item": "https://clubmma.fr/mentions-legales/"}
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://clubmma.fr/mentions-legales/",
+          "url": "https://clubmma.fr/mentions-legales/",
+          "name": "Mentions légales",
+          "inLanguage": "fr-FR",
+          "publisher": {"@type": "Organization", "name": "SAS BOXING CENTER"}
+        }
+      ]
+    }
+    </script>
+    <script src="../js/seo.js"></script>
+</head>
+<body>
+
+    <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="../" class="logo-link">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center Toulouse États-Unis" class="header-logo" width="186" height="88">
+            </a>
+            
+            <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="../disciplines/" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="../planning/" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="../clubs/" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="../nos-clubs/" class="nav-link">Nos clubs</a></li>
+                <li class="nav-item"><a href="../abonnements/" class="nav-link">Abonnements</a></li>
+                <li class="nav-item"><a href="../contact/" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" class="btn btn-primary double-outline-element">Faire un essai</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenu">
+
+    <!-- Page Banner -->
+    <section class="page-hero page-hero--plain">
+        <div class="container page-hero-content">
+            <span class="eyebrow">Informations légales</span>
+            <h1>Mentions <span class="script-soft">légales</span></h1>
+            <p>Le site clubmma.fr présente le club Boxing Center Toulouse États-Unis, au 388 avenue des États-Unis, 31200 Toulouse.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container legal">
+            <h2>Éditeur du site</h2>
+            <p><strong>SAS BOXING CENTER</strong>, société par actions simplifiée au capital de 1&nbsp;500&nbsp;€, immatriculée au RCS de Toulouse sous le numéro 821&nbsp;817&nbsp;889 (SIREN 821&nbsp;817&nbsp;889). Siège social : 12 rue de Fenouillet, 31200 Toulouse. La société exploite les cinq clubs Boxing Center de l’agglomération toulousaine.</p>
+            <p>Contact : <a href="mailto:boxingcenter31@gmail.com">boxingcenter31@gmail.com</a> · <a href="tel:+33562244682">05 62 24 46 82</a>.</p>
+
+            <h2>Directeur de la publication</h2>
+            <p>Sébastien Dutilh, comme indiqué dans les <a href="https://boxingcenter.fr/mentions-legales/" rel="noopener">mentions légales du site du réseau</a>.</p>
+
+            <h2>Hébergement</h2>
+            <p>Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.</p>
+
+            <h2>Propriété des contenus</h2>
+            <p>Les textes, photographies, vidéos et le logo Boxing Center présents sur ce site appartiennent à SAS BOXING CENTER ou à leurs auteurs. Toute reproduction ou réutilisation sans autorisation écrite est interdite.</p>
+
+            <h2>Crédits photographiques</h2>
+            <p>Photographies de la salle et des cours : <strong>B.M Photographie</strong> (séance photo du club, 2026). Tous droits réservés à leur auteur. Une personne reconnaissable sur une photo peut en demander le retrait à l’adresse ci-dessus.</p>
+
+            <h2>Sources</h2>
+            <p><a href="https://boxingcenter.fr/mentions-legales/" rel="noopener">Mentions légales du réseau Boxing Center</a> · <a href="https://annuaire-entreprises.data.gouv.fr/entreprise/821817889" rel="noopener">Annuaire des entreprises — SIREN 821 817 889</a>.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Colonne 1 : Logo & Infos -->
+            <div class="footer-about">
+                <div class="footer-brand">
+                <img src="../logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" width="186" height="88" loading="lazy" decoding="async">
+                <p class="wordmark wordmark--footer" aria-hidden="true"><span class="wordmark-lead">Boxing</span><span class="script">Center</span></p>
+                </div>
+                <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+33562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 2 : Horaires -->
+            <div>
+                <h3 class="footer-title">Plannings & Horaires</h3>
+                <ul class="footer-links">
+                    <li><a href="../planning/" style="color: var(--bronze); font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Voir tous les horaires <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
+                    <li><a href="../nos-clubs/">Nos clubs</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
+            <div>
+                <h3 class="footer-title">Boxing Center</h3>
+                <ul class="footer-links" style="margin-bottom: 2rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="../abonnements/">Abonnements</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/BoxingCenterToulouse/" target="_blank" rel="noopener" class="social-link" aria-label="Boxing Center sur Facebook (nouvelle fenêtre)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés. · <a href="../mentions-legales/" aria-current="page">Mentions légales</a></p>
+        </div>
+    </footer>
+
+    <!-- Barre d'action fixe (mobile et tablette) -->
+    <div class="mobile-cta-bar">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=388+Avenue+des+États-Unis,+31200+Toulouse" target="_blank" rel="noopener" class="btn btn-secondary">Itinéraire</a>
+        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" rel="noopener" class="btn btn-primary">Essai 10 €</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/offers.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

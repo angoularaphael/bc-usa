@@ -1,45 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://clubmma.fr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/boxeur-au-sac-sous-le-drapeau-francais.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/frappe-aux-paos-contre-la-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/shadow-boxing-devant-la-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/genou-aux-paos-pieds-poings.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/jjb-kimono-drapeau-bresil.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/la-grande-salle-ring-et-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/jjb-debout-devant-la-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/cours-de-boxe-devant-le-ring.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/rig-de-musculation-rouge.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/shadow-boxing-cours-de-boxe.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/renforcement-halteres-au-sol.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/cours-de-jjb-sur-les-tatamis.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/cours-de-boxe-a-cote-de-la-cage.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/disciplines/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/kick-sur-le-ring-drapeau-anglais.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/ligne-de-jabs-cours-de-boxe.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/mma-echange-dans-la-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/muay-thai-high-kick-drapeau-bresil.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/cross-training-box-et-kettlebells.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/planning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/cours-collectif-devant-la-cage.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/clubs/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/le-ring-et-la-salle-vue-large.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/halle-des-sacs-drapeau-americain.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/le-boxing-shop.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/rack-et-disques-espace-muscu.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/boxe-contre-la-cage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/espace-cardio.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/nos-clubs/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/la-salle-des-etats-unis.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/abonnements/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/sourire-apres-le-cours.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/enseigne-boxing-center-etats-unis.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://clubmma.fr/mentions-legales/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>

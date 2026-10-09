@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 HOST = "127.0.0.1"
 PORT = 8000
 
-PAGES = {"disciplines", "planning", "clubs", "nos-clubs", "abonnements", "contact"}
+PAGES = {"disciplines", "planning", "clubs", "nos-clubs", "abonnements", "contact", "mentions-legales"}
 BLOCKED_DIRS = {".git", "_audit", "__pycache__"}
 BLOCKED_SUFFIXES = {".py", ".pyc", ".pyo", ".md"}
 SECURITY_HEADERS = (
