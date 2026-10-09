@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_audit/
 
-Sitemap: sitemap.xml
+Sitemap: https://clubmma.fr/sitemap.xml
