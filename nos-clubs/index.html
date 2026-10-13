@@ -100,7 +100,11 @@
 
     <section class="page-hero">
         <div class="page-hero-media">
-            <img src="../photo_clubs/st-cyprien.webp" alt="Salle Boxing Center Toulouse Saint-Cyprien" width="1286" height="900" fetchpriority="high" decoding="async">
+            <picture>
+                <source type="image/avif" sizes="100vw" srcset="../photo_salle/le-ring-bleu-avant-le-cours-800.avif 800w, ../photo_salle/le-ring-bleu-avant-le-cours.avif 1600w">
+                <source type="image/webp" sizes="100vw" srcset="../photo_salle/le-ring-bleu-avant-le-cours-800.webp 800w, ../photo_salle/le-ring-bleu-avant-le-cours.webp 1600w">
+                <img src="../photo_salle/le-ring-bleu-avant-le-cours.jpg" alt="Le ring bleu du Boxing Center Toulouse États-Unis, vide, avant le cours" width="1600" height="900" style="--hero-x: 38%" fetchpriority="high" decoding="async">
+            </picture>
         </div>
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-content">

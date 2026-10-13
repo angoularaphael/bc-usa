@@ -2929,7 +2929,9 @@ body:has(.nav-menu.active) .offer-glove {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
+    /* --hero-x (posé sur l'image de chaque page) : où tombe le sujet quand l'écran est
+       plus étroit que la photo — sur téléphone on ne voit qu'un tiers de sa largeur. */
+    object-position: var(--hero-x, 50%) 40%;
     animation: heroZoom 16s var(--ease-out) both;
 }
 
@@ -3429,6 +3431,9 @@ body.page-abonnements {
         grid-column: 1 / -1;
         min-height: 340px;
     }
+    /* Tuile pleine largeur et basse (tablette) : sans ça, le cadrage centré coupait la
+       tête des deux pratiquants. */
+    .bento-tile--lg img { object-position: 50% 18%; }
     .stats-home--strip {
         grid-template-columns: 1fr 1fr;
     }
@@ -3644,7 +3649,10 @@ body.page-abonnements {
     .disc-tiles { grid-template-columns: 1fr; }
     /* Un peu plus haut qu'en 16/9 : la photo doit rester lisible sous le
        dégradé qui porte le texte. */
-    .disc-tiles > * { aspect-ratio: 5 / 4; }
+    /* :first-child aussi : la règle 16/10 du dessus (plus spécifique) gardait la première
+       tuile à 199 px de haut, et son texte recouvrait toute la photo. */
+    .disc-tiles > *,
+    .disc-tiles > :first-child { aspect-ratio: 5 / 4; }
     .disc-chips a { width: 100%; }
 }
 

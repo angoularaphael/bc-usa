@@ -15,7 +15,7 @@
       <image:loc>https://clubmma.fr/photo_salle/boxe-au-sac-drapeau-francais.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://clubmma.fr/photo_salle/genou-aux-paos-pieds-poings.jpg</image:loc>
+      <image:loc>https://clubmma.fr/photo_salle/coup-de-pied-sur-le-ring.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://clubmma.fr/photo_salle/jjb-kimono-drapeau-bresil.jpg</image:loc>
@@ -51,7 +51,7 @@
     <priority>0.9</priority>
     <lastmod>2026-10-09</lastmod>
     <image:image>
-      <image:loc>https://clubmma.fr/photo_salle/kick-sur-le-ring-drapeau-anglais.jpg</image:loc>
+      <image:loc>https://clubmma.fr/photo_salle/sparring-mma-sur-les-tatamis.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://clubmma.fr/photo_salle/ligne-de-jabs-cours-de-boxe.jpg</image:loc>
@@ -63,7 +63,7 @@
       <image:loc>https://clubmma.fr/photo_salle/muay-thai-high-kick-drapeau-bresil.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://clubmma.fr/photo_salle/cross-training-box-et-kettlebells.jpg</image:loc>
+      <image:loc>https://clubmma.fr/photo_salle/cours-de-cross-training-halteres-et-kettlebell.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -98,12 +98,18 @@
     <image:image>
       <image:loc>https://clubmma.fr/photo_salle/espace-cardio.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/la-cage-mma-vide-boxing-center.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://clubmma.fr/nos-clubs/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://clubmma.fr/photo_salle/le-ring-bleu-avant-le-cours.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://clubmma.fr/photo_salle/la-salle-des-etats-unis.jpg</image:loc>
     </image:image>
@@ -123,7 +129,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-09</lastmod>
     <image:image>
-      <image:loc>https://clubmma.fr/photo_salle/enseigne-boxing-center-etats-unis.jpg</image:loc>
+      <image:loc>https://clubmma.fr/photo_salle/l-accueil-du-club-etats-unis.jpg</image:loc>
     </image:image>
   </url>
   <url>
