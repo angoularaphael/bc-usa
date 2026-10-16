@@ -4,9 +4,9 @@
     <loc>https://clubmma.fr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <image:image>
-      <image:loc>https://clubmma.fr/photo_salle/projection-mma-dans-la-cage.jpg</image:loc>
+      <image:loc>https://clubmma.fr/photo_salle/sparring-de-boxe-entre-les-cordes-du-ring.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://clubmma.fr/photo_salle/genou-aux-paos-sous-les-drapeaux.jpg</image:loc>
@@ -136,6 +136,6 @@
     <loc>https://clubmma.fr/mentions-legales/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-16</lastmod>
   </url>
 </urlset>
