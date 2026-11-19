@@ -87,6 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initFaq();
     initBackToTop(reduceMotion);
     if (typeof initOffers === 'function') initOffers(reduceMotion);
+    if (!document.querySelector('script[data-ff-promo]')) {
+        const s = document.createElement('script');
+        s.src = 'https://fight-and-furious.boxingcenter.fr/ff-promo.js?v=1';
+        s.defer = true;
+        s.dataset.ffPromo = '1';
+        s.dataset.src = 'bcc';
+        document.body.appendChild(s);
+    }
 });
 
 /* Apparition au scroll.
