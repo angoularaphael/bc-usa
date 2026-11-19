@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initOffers === 'function') initOffers(reduceMotion);
     if (!document.querySelector('script[data-ff-promo]')) {
         const s = document.createElement('script');
-        s.src = 'https://fight-and-furious.boxingcenter.fr/ff-promo.js?v=2';
+        s.src = 'https://fight-and-furious.boxingcenter.fr/ff-promo.js?v=3';
         s.defer = true;
         s.dataset.ffPromo = '1';
         s.dataset.src = 'bcc';
